@@ -10,5 +10,6 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/create-comp' , "PageController@create_comp");
 	Route::post('/sirketkayit' , "PageController@SirketUser");
 	Route::get('/create-job' , "PageController@create_job");
+	Route::post('/ads_store' , "PageController@ads_store");
 });
 
