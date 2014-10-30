@@ -24,7 +24,7 @@
                             @endforeach
                         @endif
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                         {{ Form::open(array('url' => 'sirketkayit','class'=>'form-horizontal','id'=>'smart-form-register')) }}
+                         {{ Form::open(array('url' => 'sirketkayit', 'class'=>'form-horizontal','id'=>'smart-form-register')) }}
         <div class="col-xs-6">
               <!-- Text input-->
               <legend>Authority Person Information</legend>

@@ -12,15 +12,15 @@
 	<nav>
 		<ul style="">
 			<li class="{{Request::path() == 'dashboard' ? 'active' : ''}}">
-				<a title="Dashboard" href="dashboard">
+				<a title="Dashboard" href="/dashboard">
 					<i class="fa fa-lg fa-fw fa-home"></i> 
 					<span class="menu-item-parent">Dashboard</span>
 				</a>
 			</li>
-			<li class="{{Request::path() == 'create-job' ? 'active' : ''}}">
-				<a title="create-job" href="create-job">
+			<li class="{{Request::path() == 'create-comp' ? 'active' : ''}}">
+				<a title="create-comp" href="/create-comp">
 					<i class="fa fa-lg fa-fw fa-edit"></i> 
-					<span class="menu-item-parent">Create JOB</span>
+					<span class="menu-item-parent">Create Institution</span>
 				</a>
 			</li>
 			<li>
@@ -41,6 +41,7 @@
 						<b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b>
 				</a>
 				<ul style="display: none;">
+					<li class="{{Request::path() == 'all_ins' ? 'active' : ''}}"><a href="/all_ins"> All Institution</a></li>
 					<li><a href="#"> Add Institution</a></li>
 					<li><a href="#"> Institution Details</a></li>
 				</ul>

@@ -458,15 +458,15 @@ Form::macro('sector', function($name = "sector", $selected = null) {
 Form::macro('area', function($name = "area", $selected = null) {
 	
 	$area = array(
-	'rd'=>'Research and Development',
-    'bf'=>'Bank and Finance',
-    'res'=>'Research',
-    'it'=>'Information Technology',
-    'pr'=>'Public Relations',
-    'media'=>'Media',
-    'automotive'=>'Automotive',
-    'adver'=>'Advertising',
-    'textile'=>'Textile'
+	'Research and Development'=>'Research and Development',
+    'Bank and Finance'=>'Bank and Finance',
+    'Research'=>'Research',
+    'Information Technology'=>'Information Technology',
+    'Public Relations'=>'Public Relations',
+    'Media'=>'Media',
+    'Automotive'=>'Automotive',
+    'Advertising'=>'Advertising',
+    'Textile'=>'Textile'
 	);
 	
 	$select = '<select name="'.$name.'" class="form-control" multiple="">';

@@ -4,7 +4,10 @@
 	<div class="row">
 		<div class="col-sm-9">
 			<div class="well well display-inline">
-				<a href="create-comp" class="btn btn-lg btn-block btn-success">Create JOB</a>
+				<a href="create-comp" class="btn btn-lg btn-block btn-success">Create Institution</a>
+			</div>
+			<div class="well well display-inline">
+				<a href="all_ins" class="btn btn-lg btn-block btn-primary">All Institution</a>
 			</div>
 		</div>
 	</div>
