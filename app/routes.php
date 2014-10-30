@@ -12,6 +12,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_ins/create-job/{id}' , "PageController@create_job");
 	Route::get('/all_ins/create-jobinfo/{id}' , "PageController@create_jobinfo");
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
+	Route::get('all_ins/profile_ins/{id}' , "PageController@profil");
 });
 
 //post controller

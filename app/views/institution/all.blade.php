@@ -20,7 +20,7 @@
 			         </thead>
 			         @foreach($company as $r)
 			         <tbody>   
-			    		<td><a style="text-decoration: none;" href="all_ins/create-job/{{$r->id}}">{{$r->com_name}}</a></td>
+			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{$r->com_name}}</a></td>
 			    		<td><span class="text-danger">{{$r->com_nipt}}</span></td>
 			    		<td><span class="text-warning">{{$r->com_sector}}</span></td>
 			    		<td><span class="label label-info">{{$r->country}} </span></td>
