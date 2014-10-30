@@ -19,7 +19,7 @@ class PageController extends BaseController {
 
 	public function all_ins()
 	{
-		$company = SirketUser::all();
+		$company = SirketUser::orderBy('id','DESC')->paginate(15);
 		return View::make('institution.all')->with('company',$company);
 	}
 

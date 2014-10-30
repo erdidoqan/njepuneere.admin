@@ -30,6 +30,7 @@
 				</table>
 			@endif
 		</div>
+		{{$company->links()}}
 		</div>
 	</div>
 </div>

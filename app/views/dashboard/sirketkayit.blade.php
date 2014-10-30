@@ -75,6 +75,7 @@
                   {{ Form::text('email', '', array('class' => 'form-control input-sm', 'placeholder' => 'Email')) }}
                 </div>
               </div>
+              
       </div>
       <div class="col-xs-6">
               <legend>Company Information</legend>
