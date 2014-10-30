@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-sm-9">
 			<div class="well well display-inline">
-				<a href="create-job" class="btn btn-lg btn-block btn-success">Create JOB</a>
+				<a href="create-comp" class="btn btn-lg btn-block btn-success">Create JOB</a>
 			</div>
 		</div>
 	</div>
