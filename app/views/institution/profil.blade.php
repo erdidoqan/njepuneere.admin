@@ -7,7 +7,7 @@
 			<h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Company Profile</h3>
 			<div class="col-sm-4">
 				<a href="#" data-toggle="modal" data-target=".slacker-modal">
-        		<img src="http://institutional.njepuneere.com/{{$sirket->logo}}" alt="logo" style="max-width:240px;" class="pfimg img-rounded" ></a><hr>
+        		<img src="http://institutional.njepuneere.com/{{$sirket->logo}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
 			</div>
    			<div class="col-sm-6">
    				<div class="col-sm-5">
