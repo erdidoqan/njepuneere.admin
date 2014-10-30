@@ -102,7 +102,7 @@
              <div class="fileinput fileinput-new" data-provides="fileinput">
 					  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 540px; height: 300px;">
 					  	<span class="text-danger"><strong>Warning!</strong> Your photographs will be sent to the company you choose properly for (max.2 mb)</span>
-					  <img src="{{$sirket->logo}}" class="pfimg"></a>
+					  <img src="http://institutional.njepuneere.com/{{$sirket->logo}}" class="pfimg"></a>
 					  </div>
 					  
 					  <div>
