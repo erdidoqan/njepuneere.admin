@@ -29,5 +29,8 @@
 		<div class="btn-header transparent pull-right" id="logout">
 			<span> <a data-logout-msg="You can improve your security further after logging out by closing this opened browser" data-action="userLogout" title="Sign Out" href="logout"><i class="fa fa-sign-out"></i></a> </span>
 		</div>
+		<div class="pull-right" style="margin-top:18px;">
+			<span>IP Address: <code>({{Auth::user()->admin_ip}})</code></span>
+		</div>
 	</div>
 </header>

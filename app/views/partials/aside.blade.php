@@ -4,8 +4,7 @@
 	<div class="login-info">
 		<span>
 			<a href="#">
-				<img class="online" alt="me" src="/img/logo.png">
-				<span>Erdi Dogan</span><i class="fa fa-angle-down"></i>
+				<span>{{Auth::user()->name." ".Auth::user()->surname}}</span>
 			</a>
 		</span>
 	</div>
@@ -55,6 +54,17 @@
 				<ul style="display: none;">
 					<li><a href="#"> Add Job</a></li>
 					<li><a href="#"> Job Details</a></li>
+				</ul>
+			</li>				
+			<li>
+				<a title="Graphs" href="#">
+					<i class="fa fa-lg fa-fw fa-user-md"></i> 
+					<span class="menu-item-parent">Admin Profile</span>
+						<b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b>
+				</a>
+				<ul style="display: none;">
+					<li><a href="#"> Add Admin</a></li>
+					<li><a class="text-danger" href="/logout"> Exit</a></li>
 				</ul>
 			</li>						
 		</ul>
