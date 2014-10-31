@@ -105,7 +105,7 @@ class PostController extends BaseController {
 			$logo = Input::file('logo');
 	        //$filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
 	        $filename  = $sirket->com_name.'-'.$sirket->id.'.jpg';
-            $path = ('http://institutional.njepuneere.com/public/img/logo/' . $filename);
+            $path = 'http://institutional.njepuneere.com/public/img/logo/' . $filename;
             Image::make($logo->getRealPath())->resizeCanvas(10, -10, 'center', true)->save($path);
 	        $logo = 'img/logo/'.$filename;
 	        $logo = SirketUser::where('id','=',$id)->update(array('logo' => $logo));
