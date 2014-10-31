@@ -91,7 +91,11 @@ body{
     color: inherit;
 }
 
-
+.right
+   {
+      float: right;
+      margin-top: -56px;
+   }
 
 
 .modal-slacker {

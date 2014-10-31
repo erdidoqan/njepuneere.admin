@@ -49,7 +49,8 @@ class PageController extends BaseController {
 	public function profil($id)
 	{
 		$sirket = SirketUser::find($id);
-		return View::make('institution.profil')->with('sirket',$sirket);
+		$adsInfo = AdsInfo::where('user_id','=',$id)->orderBy('id','DESC')->paginate(10);
+		return View::make('institution.profil')->with('sirket',$sirket)->with('adsInfo',$adsInfo);
 	}
 		
 }

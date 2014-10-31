@@ -20,4 +20,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('/sirketkayit' , "PostController@SirketUser");
 	Route::post('/all_ins/create-job/ads_store/{sirket_id}' , "PostController@ads_store");
 	Route::post('/all_ins/create-job/adsinfo_store/{sirket_id}' , "PostController@adsinfo_store");
+	Route::post('/logo_up/{id}' , "PostController@logo_up");
 });

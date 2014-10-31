@@ -4,8 +4,25 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well display-inline" style="width:820px;">
-			<h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Company Profile</h3>
-			<div class="col-sm-4">
+        <h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Company Profile</h3>
+      <div class="right">
+      <div class="btn-group">
+              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+                <i class="fa fa-gear fa-lg"></i>  <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Edit Company Name</a></li>
+                <li><a href="#">Edit Company</a></li>
+                <li><a href="#">Edit Authortiy</a></li>
+                <li class="divider"></li>
+                <li><a href="#"> <span class="text-primary">Update Email & Password</span></a></li>
+                <li class="divider"></li>
+                <li><a href="#"> <span class="text-danger">Delete Company</span></a></li>
+              </ul>
+          </div>
+      </div>
+			
+      <div class="col-sm-4">
 				<a href="#" data-toggle="modal" data-target=".slacker-modal">
         		<img src="http://institutional.njepuneere.com/{{$sirket->logo}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
 			</div>
@@ -82,6 +99,29 @@
 		<div class="col-sm-12">
 			<div class="well display-inline" style="width:820px;">
 				<h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Job Lists</h3>
+
+        @if($adsInfo->count())
+          <table class="table table-hover">
+              <thead>
+                    <tr><th>Job Name</th>
+                        <th>Job Place</th>
+                        <th>Publish Date</th>
+                        <th>Languages</th>
+                        <th>Creation Date</th>
+                    </tr>
+                 </thead>
+                 @foreach($adsInfo as $r)
+                 <tbody>   
+                <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{$r->ads_name}}</a></td>
+                <td><span class="text-danger">{{$r->work_place}}</span></td>
+                <td><span class="text-warning">{{$r->pub_time}}</span></td>
+                <td><span class="label label-info">{{$r->languages}} </span></td>
+                <td><span>{{$r->created_at}} </span></td>
+              </tbody>
+              @endforeach
+          </table>
+        @endif
+        {{$adsInfo->links()}}
 			</div>
 		</div>
 	</div>
@@ -93,12 +133,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h5 class="modal-title" id="myLargeModalLabel">Change Your Company Logo</h5>
+        <h5 class="modal-title" id="myLargeModalLabel">Change Company Logo</h5>
       </div>
       <div class="modal-body">
         <div class="col-sm-8">
         
-        {{ Form::open(array('url' => 'imgUp','class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => array('logo_up',$sirket->id),'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) }}
              <div class="fileinput fileinput-new" data-provides="fileinput">
 					  <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 540px; height: 300px;">
 					  	<span class="text-danger"><strong>Warning!</strong> Your photographs will be sent to the company you choose properly for (max.2 mb)</span>
@@ -111,7 +151,7 @@
 					    {{ Form::file('logo', '') }}
 					    </span>
 					    <a href="#" class="btn btn-danger btn-sm fileinput-exists" data-dismiss="fileinput">Remove</a>
-					    <button type="submit" class="btn btn-primary btn-sm fileinput-exists right">Upload</button>
+					    <button type="submit" class="btn btn-primary btn-sm fileinput-exists">Upload</button>
 					  </div>
 				</div>
 
