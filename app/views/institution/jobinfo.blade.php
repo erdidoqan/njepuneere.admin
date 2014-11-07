@@ -36,8 +36,8 @@
                  <div class="fileinput fileinput-new" data-provides="fileinput">
 					  <div class="fileinput-preview thumbnail" data-trigger="fileinput" >
 					  	
-					  <img src="http://institutional.njepuneere.loc/{{$sirket->logo}}" class="pfimg"></a>
-					  {{Form::file('logo')}}
+					  <img src="http://admin.njepuneere.com/{{$sirket->logo}}" class="pfimg"></a>
+					  
 					  </div>
 				</div>
                 </div>
