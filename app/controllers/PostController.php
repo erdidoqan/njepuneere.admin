@@ -104,9 +104,9 @@ class PostController extends BaseController {
 			
 			$logo = Input::file('logo');
 	        $filename  = $sirket->com_name.'-'.$sirket->id. '.'.$logo->getClientOriginalExtension();
-	        $path = public_path('img/logo/'.$filename);
+	        $path = "/var/www/institutional.njepuneere/public/img/logo/".$filename;
             Image::make($logo->getRealPath())->resizeCanvas(10,-10, 'center', true)->save($path);
-	        $logo = 'img/logo/'.$filename;
+	        $logo = 'http://institutional.njepuneere.loc/public/img/logo/'.$filename;
 	        $logo = SirketUser::where('id','=',$id)->update(array('logo' => $logo));
 
 	        return Redirect::back();
