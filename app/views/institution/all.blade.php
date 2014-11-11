@@ -24,7 +24,7 @@
 			    		<td><span class="text-danger">{{$r->com_nipt}}</span></td>
 			    		<td><span class="text-warning">{{$r->com_sector}}</span></td>
 			    		<td><span class="label label-info">{{$r->country}} </span></td>
-			    		<td><a style="text-decoration: none;" href="all_ins/create-job/{{$r->id}}" class="btn btn-xs btn-primary">Create Job</a></td>
+			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">Company Profile</a></td>
 			    	</tbody>
 			    	@endforeach
 				</table>
