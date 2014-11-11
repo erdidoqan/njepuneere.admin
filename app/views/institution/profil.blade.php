@@ -87,8 +87,11 @@
    				<small>Creation Date:<br>{{$sirket->created_at}} </small></strong><hr>
    			</div>
    			<div class="col-sm-2">
-   				<small>Last Updated Date:<br>{{$sirket->updated_at}} </small></strong>
+   				<small>Last Updated Date:<br>{{$sirket->updated_at}} </small></strong><hr>
    			</div>
+        <div class="col-sm-2">
+          <a href="/all_ins/create-job/{{$sirket->id}}" class="btn btn-block btn-success">Create Job</a>
+        </div>
 			</div>
 		</div>
 	</div>
