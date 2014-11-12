@@ -31,7 +31,14 @@
    					Company Name:
    				</div>
    				<div class="col-sm-7">
-   					<strong>{{ucwords($sirket->com_name)}}</strong>
+   					<strong onclick="toggleId()">{{ucwords($sirket->com_name)}}</strong>
+            <div ID="id" style="display:none;">
+              <form action="stdNewInfo.php?komut=upId&id=" method="post" class="form">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="epokaID" id="InputName" value="{{ucwords($sirket->com_name)}}">
+                  </div>
+              </form>
+            </div>
    				</div>
    				<div class="col-sm-5">
    					Company NIPT:
@@ -168,5 +175,13 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div>
-
+<script type="text/javascript">
+  function toggleId() {
+          // Get the DOM reference
+          var contentId = document.getElementById("id");
+          // Toggle 
+          contentId.style.display == "block" ? contentId.style.display = "none" : 
+        contentId.style.display = "block"; 
+        }
+</script>
 @stop

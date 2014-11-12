@@ -38,7 +38,7 @@ class PostController extends BaseController {
 	public function ads_store($sirket_id)
 	{
 		$input = Input::all();
-		$rules = array('position' => 'required','sector'=>'required');
+		$rules = array('position' => 'required','sector'=>'required','area'=>'required');
 		$v = Validator::make($input,$rules);
 		if ($v->passes())
 		{
@@ -56,7 +56,7 @@ class PostController extends BaseController {
 
 			return Redirect::to('/all_ins/create-jobinfo/'.$sirket_id);
 		}
-		return Redirect::back();
+		return Redirect::back()->withErrors($v);
 	}
 
 	public function adsinfo_store($sirket_id)

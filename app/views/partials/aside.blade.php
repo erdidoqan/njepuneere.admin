@@ -22,6 +22,12 @@
 					<span class="menu-item-parent">Create Institution</span>
 				</a>
 			</li>
+			<li class="{{Request::path() == 'language' ? 'active' : ''}}">
+				<a title="create-comp" href="/languages">
+					<i class="fa fa-lg fa-fw fa-language"></i> 
+					<span class="menu-item-parent">Languages</span>
+				</a>
+			</li>
 			<li>
 				<a title="Graphs" href="#">
 					<i class="fa fa-lg fa-fw fa-user"></i> 
