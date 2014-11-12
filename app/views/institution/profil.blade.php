@@ -24,7 +24,7 @@
 			
       <div class="col-sm-4">
 				<a href="#" data-toggle="modal" data-target="#myModal">
-        		<img src="{{$sirket->logo}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
+        		<img src="{{$sirket->logo}}" id="target-5" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
 			</div>
    			<div class="col-sm-6">
    				<div class="col-sm-5">
