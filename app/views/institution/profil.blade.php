@@ -184,7 +184,7 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <img src="http://institutional.njepuneere.com/{{$sirket->logo}}" id="target-5" class="pfimg"></a>
+        <img src="{{$sirket->logo}}" id="target-5" class="pfimg"></a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
