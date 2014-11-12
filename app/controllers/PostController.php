@@ -70,7 +70,7 @@ class PostController extends BaseController {
 		{
 			$adsinfo = new AdsInfo;
 			$adsinfo->com_name = $sirket->com_name;
-			$adsinfo->logo = $sirket->logo;
+			$adsinfo->logo = substr($sirket->logo,36);
 			$adsinfo->ads_name = Input::get('ads_name');
 			$adsinfo->ref_code = Input::get('ref_code');
 			$adsinfo->languages = Input::get('languages');
