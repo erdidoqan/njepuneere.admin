@@ -24,7 +24,7 @@
 			
       <div class="col-sm-4">
 				<a href="#" data-toggle="modal" data-target="#myModal">
-        		<img src="{{$sirket->logo}}" id="target-5" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
+        		<img src="{{$sirket->logo}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ></a><hr>
 			</div>
    			<div class="col-sm-6">
    				<div class="col-sm-5">
@@ -181,15 +181,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Change Company Logo</h4>
       </div>
+        {{ Form::open(array('url' => array('logo_up',$sirket->id),'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) }}
       <div class="modal-body">
-        <img src="{{$sirket->logo}}" id="target-5" class="pfimg"></a>
+        {{ Form::file('logo', '') }}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
+      {{Form::close()}}
     </div>
   </div>
 </div>
@@ -205,77 +207,12 @@
 </script>
 
 <script type="text/javascript">
-  /* DO NOT REMOVE : GLOBAL FUNCTIONS!
-   *
-   * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
-   *
-   * // activate tooltips
-   * $("[rel=tooltip]").tooltip();
-   *
-   * // activate popovers
-   * $("[rel=popover]").popover();
-   *
-   * // activate popovers with hover states
-   * $("[rel=popover-hover]").popover({ trigger: "hover" });
-   *
-   * // activate inline charts
-   * runAllCharts();
-   *
-   * // setup widgets
-   * setup_widgets_desktop();
-   *
-   * // run form elements
-   * runAllForms();
-   *
-   ********************************
-   *
-   * pageSetUp() is needed whenever you load a page.
-   * It initializes and checks for all basic elements of the page
-   * and makes rendering easier.
-   *
-   */
-
   pageSetUp();
-
-  /*
-   * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
-   * eg alert("my home function");
-   *
-   * var pagefunction = function() {
-   *   ...
-   * }
-   * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
-   *
-   * TO LOAD A SCRIPT:
-   * var pagefunction = function (){
-   *  loadScript(".../plugin.js", run_after_loaded);
-   * }
-   *
-   * OR
-   *
-   * loadScript(".../plugin.js", run_after_loaded);
-   */
-
   var pagefunction = function() {
-    //console.log("load and ready");
-
-
-    // api_handler
-    
     var api_handler = function() {
-
-      // The variable jcrop_api will hold a reference to the
-      // Jcrop API once Jcrop is instantiated.
       var jcrop_api;
-
-
-      // The function is pretty simple
       var initJcrop = function(){
-        // Hide any interface elements that require Jcrop
-        // (This is for the local user interface portion.)
         $('.requiresjcrop').hide();
-
-        // Invoke Jcrop in typical fashion
         $('#target-5').Jcrop({
           onRelease : releaseCheck
         }, function() {
@@ -291,27 +228,11 @@
         });
 
       };
-
-      // In this example, since Jcrop may be attached or detached
-      // at the whim of the user, I've wrapped the call into a function 
       initJcrop();
-
-      // Use the API to find cropping dimensions
-      // Then generate a random selection
-      // This function is used by setSelect and animateTo buttons
-      // Mainly for demonstration purposes
       function getRandom() {
         var dim = jcrop_api.getBounds();
         return [Math.round(Math.random() * dim[0]), Math.round(Math.random() * dim[1]), Math.round(Math.random() * dim[0]), Math.round(Math.random() * dim[1])];
       };
-
-      // This function is bound to the onRelease handler...
-      // In certain circumstances (such as if you set minSize
-      // and aspectRatio together), you can inadvertently lose
-      // the selection. This callback re-enables creating selections
-      // in such a case. Although the need to do this is based on a
-      // buggy behavior, it's recommended that you in some way trap
-      // the onRelease callback if you use allowSelect: false
       function releaseCheck() {
         jcrop_api.setOptions({
           allowSelect : true
