@@ -36,7 +36,7 @@
                  <div class="fileinput fileinput-new" data-provides="fileinput">
 					  <div class="fileinput-preview thumbnail" data-trigger="fileinput" >
 					  	
-					  <img src="{{$sirket->logo}}" class="pfimg"></a>
+					  <img src="{{User::$img_sirket_src."".$sirket->logo}}" class="pfimg"></a>
 					  
 					  </div>
 				</div>

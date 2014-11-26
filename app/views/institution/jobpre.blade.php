@@ -26,7 +26,7 @@
                           <h6>{{$adsInfo->ref_code}}</h6>
                       </div>
                       <div class="col-sm-6">
-                          <img src="http://institutional.njepuneere.loc/{{$adsInfo->logo}}" alt="post img" class="pull-right img-responsive img-thumbnail" style="width:200px; height=150px; ">
+                          <img src="{{User::$img_sirket_src."".$adsInfo->logo}}" alt="post img" class="pull-right img-responsive img-thumbnail" style="width:200px; height=150px; ">
                 </div>
               </div>         
            
