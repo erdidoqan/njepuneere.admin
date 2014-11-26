@@ -15,7 +15,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'admin';
-
+	public static $img_sirket_src = 'http://institutional.njepuneere.com/';
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *

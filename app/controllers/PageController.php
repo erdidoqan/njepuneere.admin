@@ -52,5 +52,12 @@ class PageController extends BaseController {
 		$adsInfo = AdsInfo::where('user_id','=',$id)->orderBy('id','DESC')->paginate(10);
 		return View::make('institution.profil')->with('sirket',$sirket)->with('adsInfo',$adsInfo);
 	}
+	public function logo_up($id)
+	{
+		$data['logo'] = Session::get('logo');
+		$data['modal'] = (Session::get('modal') == null ? 'false' : 'true');
+		$sirket = SirketUser::find($id);
+		return View::make('institution.logo')->with('sirket',$sirket)->with('data',$data);
+	}
 		
 }

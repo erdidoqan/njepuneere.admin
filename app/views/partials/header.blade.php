@@ -19,4 +19,5 @@
     {{ HTML::style('/css/jasny-bootstrap.css') }}
     {{ HTML::style('/css/jasny-bootstrap.min.css') }}
     {{ HTML::style('/css/jasny-bootstrap.css.map') }}
-    
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.12/css/jquery.Jcrop.css">
