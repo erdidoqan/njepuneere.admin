@@ -19,7 +19,7 @@
         		</div>
         		<div class="col-sm-12">
         			{{ Form::open(array('url' => array('logo_up',$sirket->id), 'enctype' => 'multipart/form-data')) }}
-						{{ form::file('logo') }}
+						{{ form::file('logo') }}<br>
 						<input type="hidden" name="img_bckp" value="{{$data['logo']}}" /> 
 						{{ form::submit('update', array('class'=>'btn btn-success')) }}
 					{{ Form::close() }}
@@ -64,7 +64,7 @@
 	}
 		$(function() {
 	            $('#cropbox').Jcrop({
-	                aspectRatio : 2,
+	                aspectRatio : 4,
 	                onSelect : updateCoords
 	            });
 	            $('#myModal').modal({show: modal});
