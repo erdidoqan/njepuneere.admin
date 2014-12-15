@@ -14,8 +14,8 @@
 			            <tr><th>Institution Name</th>
 			                <th>Jobs</th>
 			                <th>Applicant's Name & Surname</th>
-			                <th>Applicant's Surname</th>
-			                <th>Create Job</th>
+			                <th>Applicant's Date</th>
+			                <th>Check CV</th>
 			            </tr>
 			         </thead>
 			         @foreach($app as $r)
@@ -23,8 +23,8 @@
 			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{$r->com_name}}</a></td>
 			    		<td><a style="text-decoration:none;" href="#">{{$r->ads_name}}</a></td>
 			    		<td><span>{{ucwords($r->birey_adi)." ". ucwords($r->birey_soyadi)}}</span></td>
-			    		<td><span>{{$r->birey_soyadi}} </span></td>
-			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">Company Profile</a></td>
+			    		<td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($r->created_at))->diffForHumans() }} </span></td>
+			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">check user CV</a></td>
 			    	</tbody>
 			    	@endforeach
 				</table>
