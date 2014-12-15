@@ -9,6 +9,9 @@
 			<div class="well well display-inline">
 				<a href="all_ins" class="btn btn-lg btn-block btn-primary">All Institution</a>
 			</div>
+			<div class="well well display-inline">
+				<a href="all_app" class="btn btn-lg btn-block btn-info">All Applicant</a>
+			</div>
 		</div>
 	</div>
 </div>

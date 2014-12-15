@@ -14,6 +14,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
 	Route::get('all_ins/profile_ins/{id}' , "PageController@profil");
 	Route::get('logo-update/{id}', "PageController@logo_up");
+	Route::get('/all_app', "PageController@allApp");
 });
 
 //post controller

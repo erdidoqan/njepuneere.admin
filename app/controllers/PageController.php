@@ -22,6 +22,11 @@ class PageController extends BaseController {
 		$company = SirketUser::orderBy('id','DESC')->paginate(15);
 		return View::make('institution.all')->with('company',$company);
 	}
+	public function all_app()
+	{
+		$company = SirketUser::orderBy('id','DESC')->paginate(15);
+		return View::make('institution.app')->with('company',$company);
+	}
 
 	public function create_job($id)
 	{
@@ -58,6 +63,11 @@ class PageController extends BaseController {
 		$data['modal'] = (Session::get('modal') == null ? 'false' : 'true');
 		$sirket = SirketUser::find($id);
 		return View::make('institution.logo')->with('sirket',$sirket)->with('data',$data);
+	}
+	public function allApp()
+	{
+		$app = AllApply::orderBy('id','DESC')->paginate(15);
+		return View::make('user.apply')->with('app',$app);
 	}
 		
 }
