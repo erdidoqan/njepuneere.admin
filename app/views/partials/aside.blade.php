@@ -37,6 +37,7 @@
 				<ul style="display: none;">
 					<li><a href="#"> Add Person</a></li>
 					<li><a href="#"> Person Details</a></li>
+					<li class="{{Request::path() == 'all_app' ? 'active' : ''}}"><a href="/all_app"> All Apply</a></li>
 				</ul>
 			</li>
 			<li>
