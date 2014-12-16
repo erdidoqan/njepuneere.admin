@@ -9,7 +9,8 @@ class PageController extends BaseController {
 
 	public function dashboard()
 	{
-		return View::make('dashboard.dashboard');
+		$app = AllApply::orderBy('id','DESC')->paginate(5);
+		return View::make('dashboard.dashboard')->with('app',$app);
 	}
 
 	public function create_comp()
