@@ -163,6 +163,11 @@
             </tbody>
             @endforeach
           </table>
+        @else
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Warning!</strong> Institution has not yet any application.
+            </div>
         @endif
         {{$app->links()}}
       </div>
