@@ -14,7 +14,7 @@
 		<a href="user_profile" class="btn btn-primary">User Profile & Message</a>
 	</div>
 			<div class="smart-timeline-icon">
-				<img src="{{$user->pr_img}}" width="32" height="32" alt="user">
+				<img src="{{User::$img_user_src."".$user->pr_img}}" width="32" height="32" alt="user">
 			</div>
 			<div class="smart-timeline-content">
 				<h4>
