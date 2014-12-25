@@ -15,6 +15,8 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('all_ins/profile_ins/{id}' , "PageController@profil");
 	Route::get('logo-update/{id}', "PageController@logo_up");
 	Route::get('/all_app', "PageController@allApp");
+	Route::get('/applicant/{id}', "PageController@applicant");
+	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
 });
 
 //post controller

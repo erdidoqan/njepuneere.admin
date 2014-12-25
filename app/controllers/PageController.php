@@ -56,8 +56,10 @@ class PageController extends BaseController {
 	{
 		$sirket = SirketUser::find($id);
 		$adsInfo = AdsInfo::where('user_id','=',$id)->orderBy('id','DESC')->paginate(10);
+		$ads = Ads::where('user_id','=',$id)->first();
 		$app = AllApply::where('sirket_id','=',$id)->orderBy('id','DESC')->paginate(10);
-		return View::make('institution.profil')->with('sirket',$sirket)->with('adsInfo',$adsInfo)->with('app',$app);
+		$ads_id = $ads->id;
+		return View::make('institution.profil')->with('sirket',$sirket)->with('adsInfo',$adsInfo)->with('app',$app)->with('ads_id',$ads_id);
 	}
 	public function logo_up($id)
 	{
@@ -70,6 +72,29 @@ class PageController extends BaseController {
 	{
 		$app = AllApply::orderBy('id','DESC')->paginate(15);
 		return View::make('user.apply')->with('app',$app);
+	}
+
+	public function applicant($id)
+	{
+		$ads = AdsInfo::find($id);
+		$app = AllApply::where('ads_id','=',$id)->orderBy('id','DESC')->paginate(15);
+		return View::make('institution.ads')->with(compact('ads', 'app'));
+	}
+
+	public function BireyProfile($id, $ads_id)
+	{
+		$cv = Apply::where('user_id','=',$id)->where('ads_id','=',$ads_id)->first();
+		$Uexp = Exp::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Uedu = Edu::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Uintern = Intern::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Uforeign = Foreign::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Ucompe = Compe::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Ucert = Cert::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$Uref = Ref::where('cv_id','=',$cv->cv_id)->paginate(5);
+		$user = BireyUser::find($id);
+
+		return View::make('user.profile')
+		->with(compact('user', 'Uexp', 'Uedu', 'Uintern', 'Uforeign', 'Ucompe','Ucert', 'Uref'));
 	}
 		
 }

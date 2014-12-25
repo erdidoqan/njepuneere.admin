@@ -118,6 +118,7 @@
                         <th>Publish Date</th>
                         <th>Languages</th>
                         <th>Creation Date</th>
+                        <th>Applicant</th>
                     </tr>
                  </thead>
                  @foreach($adsInfo as $r)
@@ -127,6 +128,7 @@
                 <td><span class="text-warning">{{$r->pub_time}}</span></td>
                 <td><span class="label label-info">{{$r->languages}} </span></td>
                 <td><span>{{$r->created_at}} </span></td>
+                <td><a style="text-decoration: none;" href="/applicant/{{$r->id}}" class="btn btn-xs btn-primary">Basvurulari Gor</a></td>
               </tbody>
               @endforeach
           </table>
@@ -150,7 +152,6 @@
                       <th>Jobs</th>
                       <th>Applicant's Name & Surname</th>
                       <th>Applicant's Date</th>
-                      <th>Check CV</th>
                   </tr>
                  </thead>
                  @foreach($app as $r)
@@ -159,7 +160,6 @@
               <td><a style="text-decoration:none;" href="#">{{$r->ads_name}}</a></td>
               <td><span>{{ucwords($r->birey_adi)." ". ucwords($r->birey_soyadi)}}</span></td>
               <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($r->created_at))->diffForHumans() }} </span></td>
-              <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">check user CV</a></td>
             </tbody>
             @endforeach
           </table>
