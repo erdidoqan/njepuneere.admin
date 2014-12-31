@@ -32,7 +32,7 @@
                 <li class="divider"></li>
                 <li><a href="#"> <span class="text-primary">Update Email & Password</span></a></li>
                 <li class="divider"></li>
-                <li><a href="#"> <span class="text-danger">Delete Company</span></a></li>
+                <li><a href="#ComDel" data-toggle="modal"> <span class="text-danger">Delete Company</span></a></li>
               </ul>
           </div>
       </div>
@@ -191,35 +191,39 @@
 </div>
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="ComDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change Company Logo</h4>
+        <h4 class="modal-title" id="myModalLabel">You want to delete <span class="text-danger">{{$sirket->com_name}}</span> institution ?</h4>
       </div>
-       <div class="modal-body">
-      {{ Form::open(array('url' => array('logo_up',$sirket->id),'class'=>'form-horizontal', 'enctype' => 'multipart/form-data')) }}
-             <div class="fileinput fileinput-new" data-provides="fileinput">
-            <div class="fileinput-preview thumbnail" >
-              <span class="text-danger"><strong>Warning!</strong> Your photographs will be sent to the company you choose properly for (max.2 mb)</span>
-            <img src="{{Auth::user()->logo}}" id="target-2" class="pfimg" ></a>
-            </div>
-            
-            <div>
-              <span class="btn btn-success btn-sm btn-file"><span class="fileinput-new">Select Company Logo</span>
-              <span class="fileinput-exists">Change</span>
-              {{ Form::file('logo', '') }}
-              </span>
-              <a href="#" class="btn btn-danger btn-sm fileinput-exists" data-dismiss="fileinput">Remove</a>
-              <button type="submit" class="btn btn-primary btn-sm fileinput-exists right">Upload</button>
-            </div>
+
+        <div class="modal-body">
+          {{ Form::open(array('url' => array('/delete/company', $sirket->id),'id' => 'login-form','class'=>'smart-form')) }}
+          
+          <fieldset>
+                <section>
+                  <div class="row">
+                    <label class="label col col-2">Institution:</label>
+                    <div class="col col-10">
+                      <label class="input"> <i class="icon-append fa fa-institution"></i>
+                        {{ Form::text('com_name', '', array('class' => 'form-control', 'placeholder' => 'Write a institution name')) }}
+                      </label>
+                    </div>
+                  </div>
+                </section>
         </div>
-        {{ Form::close() }}
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-danger">Delete Institution</button>
+          {{ Form::close() }}
         </div>
+
+
+      </div>
     </div>
   </div>
-</div>
 
 <script type="text/javascript">
   function toggleId() {

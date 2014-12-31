@@ -102,5 +102,7 @@ class PageController extends BaseController {
 		return View::make('user.profile')
 		->with(compact('user', 'Uexp', 'Uedu', 'Uintern', 'Uforeign', 'Ucompe','Ucert', 'Uref'));
 	}
+
+	
 		
 }

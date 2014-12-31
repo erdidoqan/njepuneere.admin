@@ -26,4 +26,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('/all_ins/create-job/adsinfo_store/{sirket_id}' , "PostController@adsinfo_store");
 	Route::post('/logo_up/{id}' , "PostController@logo_up");
 	Route::post('/crop/{id}', "PostController@crop");
+	Route::post('/delete/company/{id}',"PostController@deletecom");
 });

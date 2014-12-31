@@ -131,4 +131,19 @@ class PostController extends BaseController {
 		$logo->save($img);
 		return Redirect::back();
 	}
+
+	public function deletecom($id)
+	{
+		$postComName = Input::get('com_name');
+		$company = SirketUser::find($id);
+		$companyName = $company->com_name;
+		
+		if ($postComName == $companyName) {
+			$company->delete();
+			return Redirect::to('/all_ins')->with('error', '<b>'.ucwords($companyName).'</b>'." ".'institution was successfully deleted.');	
+		} else {
+			return Redirect::back()->with('error', 'institution name was wrong!!');
+		}
+		
+	}
 }
