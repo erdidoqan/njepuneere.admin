@@ -5,7 +5,12 @@
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
   <strong>Warning!</strong> Firstly..You have to create a company.
 </div>
-
+@if ($errors->has())
+<div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <strong>Error!</strong> {{$errors->first()}}
+</div>
+@endif
     <div class="row setup-content" id="step-1">
         <div class="col-xs-10">
               <div class="container">    
@@ -15,14 +20,7 @@
                         <div class="panel-title">Create Employer</div>
                     </div>
                     <div style="padding-top:30px" class="panel-body" >
-                         @if($errors->has('email'))
-                            @foreach($errors->get('email') as $message)
-                            <div class="alert alert-danger">
-                            <a href="#" class="close" data-dismiss="alert">&times;</a>
-                                    <span>This email already exists</span>
-                                    </div>
-                            @endforeach
-                        @endif
+                         
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                          {{ Form::open(array('url' => 'sirketkayit', 'class'=>'form-horizontal','id'=>'smart-form-register')) }}
         <div class="col-xs-6">

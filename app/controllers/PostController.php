@@ -30,7 +30,9 @@ class PostController extends BaseController {
 			$sirket_user->fax = Input::get('fax');
 			$sirket_user->save();
 
-			return Redirect::to('/dashboard');
+			$sirketName = Input::get('com_name');
+			$sirketId = $sirket_user->id;
+			return Redirect::to('/all_ins/profile_ins/'.$sirketId)->with('success', '<b>'.ucwords($sirketName).'</b>'. " ".' institution has been created. Now you can create a new job.');
 		}
 		return Redirect::to('create-comp')->withErrors($v);
 	}

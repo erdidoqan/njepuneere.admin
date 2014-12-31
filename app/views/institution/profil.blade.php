@@ -1,5 +1,20 @@
 @extends('layouts.master')
 @section('content')
+
+@if (Session::has('error'))
+<div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <span>Error!</span> {{Session::get('error')}}
+</div>
+@endif
+
+@if (Session::has('success'))
+<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <span class="text-info">Success!</span> {{Session::get('success')}}
+</div>
+@endif
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
@@ -27,18 +42,18 @@
             <a href="/logo-update/{{$sirket->id}}">Update Logo</a>
 			</div>
    			<div class="col-sm-6">
+        <div class="col-sm-5">
+            Authorized:
+          </div>
+          <div class="col-sm-7">
+            <strong onclick="toggleId()">{{ucwords($sirket->name)." ".ucwords($sirket->sname)}}</strong>
+          </div>
+
    				<div class="col-sm-5">
    					Company Name:
    				</div>
    				<div class="col-sm-7">
    					<strong onclick="toggleId()">{{ucwords($sirket->com_name)}}</strong>
-            <div ID="id" style="display:none;">
-              <form action="stdNewInfo.php?komut=upId&id=" method="post" class="form">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="epokaID" id="InputName" value="{{ucwords($sirket->com_name)}}">
-                  </div>
-              </form>
-            </div>
    				</div>
    				<div class="col-sm-5">
    					Company NIPT:

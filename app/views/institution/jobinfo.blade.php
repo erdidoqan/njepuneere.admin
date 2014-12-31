@@ -24,7 +24,7 @@
 				<div class="form-group">
                 <label class="col-sm-4" for="textinput">Company Name* :</label>
                 <div class="col-sm-8">
-                  <h4 class="text-danger"><strong>{{$sirket->com_name}} </strong></h4>
+                  <h4 class="text-danger"><strong>{{ucwords($sirket->com_name)}} </strong></h4>
                 </div>
               </div>			
 									
