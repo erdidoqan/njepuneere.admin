@@ -31,8 +31,14 @@ class PageController extends BaseController {
 
 	public function create_job($id)
 	{
-		$sirket_id = SirketUser::find($id)->id;
-		return View::make('institution.job')->with('sirket_id',$sirket_id);
+		$sirketLogo = SirketUser::find($id)->logo;
+		
+		if(empty($sirketLogo)){
+			return Redirect::to('/logo-update/'.$id)->with('error', "Plase firstly, you must update company logo!");
+		}else{
+			$sirket_id = SirketUser::find($id)->id;
+			return View::make('institution.job')->with('sirket_id',$sirket_id);
+		}
 	}
 
 	public function create_jobinfo($sirket_id)

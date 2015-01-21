@@ -1,20 +1,23 @@
 @extends('layouts.master')
 @section('content')
 
-@if (Session::has('error'))
-<div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <span>Error!</span> {{Session::get('error')}}
-</div>
-@endif
+<div class="container">
+  <div style="width:820px;">
+    @if (Session::has('error'))
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <span>Error!</span> {{Session::get('error')}}
+    </div>
+    @endif
 
-@if (Session::has('success'))
-<div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <span class="text-info">Success!</span> {{Session::get('success')}}
+    @if (Session::has('success'))
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <span class="text-info">Success!</span> {{Session::get('success')}}
+    </div>
+    @endif
+  </div>
 </div>
-@endif
-
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
