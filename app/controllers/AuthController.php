@@ -23,8 +23,9 @@ class AuthController extends BaseController {
 	public function logout()
 		{
 			$user = new User;
-			$user->admin_ip = Request::getClientIp();
+			$user->admin_ip = $_SERVER['REMOTE_ADDR'];
 			$user->save();
+
 
 			Auth::logout();
 			return Redirect::to('/');
