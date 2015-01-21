@@ -12,6 +12,9 @@ class AuthController extends BaseController {
 		{
 			$kimlik = array('email' => Input::get('email'), 'password' => Input::get('password'));
 			if(Auth::attempt($kimlik)){
+				$ip_adres = Request::getClientIp();
+				User::where('id','=',Auth::user()->id)->update(array('admin_ip'=>$ip_adres));
+				
 				return Redirect::to('dashboard');
 			} else {
 				return Redirect::back()->withErrors($v);
@@ -22,9 +25,7 @@ class AuthController extends BaseController {
 
 	public function logout()
 		{
-			$ip_adres = Request::getClientIp();
-			User::where('id','=',Auth::user()->id)->update(array('admin_ip'=>$ip_adres));
-
+			
 			Auth::logout();
 			return Redirect::to('/');
 		}
