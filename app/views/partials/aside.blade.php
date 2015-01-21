@@ -71,6 +71,7 @@
 				</a>
 				<ul style="display: none;">
 					<li><a href="#"> Add Admin</a></li>
+					<li><a href="#" class="text-info"> Notes</a></li>
 					<li><a class="text-danger" href="/logout"> Exit</a></li>
 				</ul>
 			</li>						
