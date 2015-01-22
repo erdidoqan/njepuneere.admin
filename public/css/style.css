@@ -7,8 +7,13 @@ body{
 /*    --------------------------------------------------
   :: Login Section
   -------------------------------------------------- */
+.logo-img{
+    width: 130px;
+}
+
 #login {
-    padding-top: 190px
+    padding-top: 100px
+
 }
 #login .form-wrap {
     width: 30%;
