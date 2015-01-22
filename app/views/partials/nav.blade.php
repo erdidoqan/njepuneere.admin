@@ -1,7 +1,7 @@
 
 <header id="header" style="position:fixed;width:100%;margin-top:-72px;">
 	<div id="logo-group">
-		<span id="logo"> <img alt="njepuneere" style="margin-top:-15px;" src="/img/logo.png"> </span>
+		<span id="logo"><a href="/dashboard"> <img alt="njepuneere" src="/img/logo.png"> </a></span>
 	</div>
 	<div class="project-context hidden-xs">
 		<span class="label">Projects:</span>
