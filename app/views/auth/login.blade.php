@@ -32,8 +32,9 @@
                       <li><span class="fa fa-check text-success"></span> See all CVs</li>
                       <li><span class="fa fa-check text-success"></span> Fastly</li>
                       <li><span class="fa fa-check text-success"></span> Save your joblist</li>
-                      <li><span class="fa fa-check text-success"></span> checkout all institution</li>
-                      <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                      <li><span class="fa fa-check text-success"></span> Checkout all institution</li>
+                      <li><span class="fa fa-check text-success"></span> Change institution logos</li>
+                      <li><span class="fa fa-check text-success"></span> Create institutions</li>
                   </ul>
               </div>
           </div>
