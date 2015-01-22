@@ -109,6 +109,8 @@ class PageController extends BaseController {
 		->with(compact('user', 'Uexp', 'Uedu', 'Uintern', 'Uforeign', 'Ucompe','Ucert', 'Uref'));
 	}
 
-	
+	public function mailer(){
+		return View::make('dashboard.mailer');
+	}
 		
 }

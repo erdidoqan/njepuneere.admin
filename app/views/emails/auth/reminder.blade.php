@@ -4,11 +4,9 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h2>Password Reset</h2>
-
+		<a href="http://njepuneere.com"><img src="http://njepuneere.com/img/logo.png" alt="Njepuneere logo"></a>
 		<div>
-			To reset your password, complete this form: {{ URL::to('password/reset', array($token)) }}.<br/>
-			This link will expire in {{ Config::get('auth.reminder.expire', 60) }} minutes.
+			<p>{{ucwords($mesaj)}}</p>
 		</div>
 	</body>
 </html>

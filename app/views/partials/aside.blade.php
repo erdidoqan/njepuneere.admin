@@ -28,6 +28,12 @@
 					<span class="menu-item-parent">Languages</span>
 				</a>
 			</li>
+			<li class="{{Request::path() == 'mailer' ? 'active' : ''}}">
+				<a title="create-comp" href="/mailer">
+					<i class="fa fa-lg fa-fw fa-inbox"></i> 
+					<span class="menu-item-parent">Mailer</span>
+				</a>
+			</li>
 			<li>
 				<a title="Graphs" href="#">
 					<i class="fa fa-lg fa-fw fa-user"></i> 

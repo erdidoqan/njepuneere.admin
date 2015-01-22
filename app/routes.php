@@ -17,6 +17,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_app', "PageController@allApp");
 	Route::get('/applicant/{id}', "PageController@applicant");
 	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
+	Route::get('/mailer', "PageController@mailer");
 });
 
 //post controller
@@ -27,4 +28,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('/logo_up/{id}' , "PostController@logo_up");
 	Route::post('/crop/{id}', "PostController@crop");
 	Route::post('/delete/company/{id}',"PostController@deletecom");
+	Route::post('/mailer',"PostController@mailer");
 });
