@@ -165,8 +165,7 @@ class PostController extends BaseController {
 
 		return  Redirect::back()
 	                ->with('success', 
-	                		'Your account has been created. 
-	                		We have sent you an e-mail to activate your account.');
+	                		'Mails was successfully sent to all recipients');
         
 		
 	}
