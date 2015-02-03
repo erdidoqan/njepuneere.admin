@@ -112,5 +112,14 @@ class PageController extends BaseController {
 	public function mailer(){
 		return View::make('dashboard.mailer');
 	}
+
+	public function upallads($id){
+		$user = SirketUser::where('id','=',$id)->first();
+		$logo = $user->logo;
+
+		$logo = AdsInfo::where('user_id','=',$id)->update(array('logo' => $logo));
+
+		return Redirect::back()->with('success', 'All ads change logos.');
+	}
 		
 }

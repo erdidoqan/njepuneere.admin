@@ -40,6 +40,10 @@
         				<p>- This section of Image Files (".jpeg", ".jpg", ".gif") can be added.</p><br>
         				<p>- Size 1 MB of files can be added by passing the record.</p>
         			</div>
+
+        			<div class="col-sm-5 right">
+        				<a href="/image/{{$sirket->id}}" class="btn btn-primary btn-block" >Update All Ads Logo</a>
+        			</div>
         		</div>
         		<div class="col-sm-12">
         			{{ Form::open(array('url' => array('logo_up',$sirket->id), 'enctype' => 'multipart/form-data')) }}
