@@ -42,7 +42,7 @@
         			</div>
 
         			<div class="col-sm-5 right">
-        				<a href="/image/{{$sirket->id}}" class="btn btn-primary btn-block" >Update All Ads Logo</a>
+        				<a href="/logo-update/{{$sirket->id}} /upallads" class="btn btn-primary btn-block" >Update All Ads Logo</a>
         			</div>
         		</div>
         		<div class="col-sm-12">

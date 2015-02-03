@@ -18,7 +18,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/applicant/{id}', "PageController@applicant");
 	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
 	Route::get('/mailer', "PageController@mailer");
-	Route::get('/image/upallads/{id}', "PageController@upallads");
+	Route::get('/logo-update/{id}/upallads', "PageController@upallads");
 });
 
 //post controller
