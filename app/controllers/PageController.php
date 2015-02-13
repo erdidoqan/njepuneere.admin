@@ -10,12 +10,21 @@ class PageController extends BaseController {
 	public function dashboard()
 	{
 		$app = AllApply::orderBy('id','DESC')->paginate(5);
-		return View::make('dashboard.dashboard')->with('app',$app);
+		$user = BireyUser::orderBy('id','DESC')->paginate(5);
+		$com = SirketUser::orderBy('id','DESC')->paginate(5);
+
+		return View::make('dashboard.dashboard')->with('app',$app)->with('user',$user)->with('com',$com);
 	}
 
 	public function create_comp()
 	{
 		return View::make('dashboard.sirketkayit');
+	}
+
+	public function users()
+	{
+		$users = BireyUser::orderBy('id','DESC')->paginate(25);
+		return View::make('user.all')->with('users',$users);
 	}
 
 	public function all_ins()
