@@ -12,10 +12,42 @@
 			<div class="well well display-inline">
 				<a href="all_app" class="btn btn-lg btn-block btn-info">All Applicant</a>
 			</div>
+			<div class="well well display-inline">
+				<a href="all_app" class="btn btn-lg btn-block btn-warning">All Jobs</a>
+			</div>
 		</div>
 	</div>
 </div>
 <div class="container">
+<div class="row">
+		<div class="col-sm-12">
+			<div class="well well display-inline" style="width:1130px;">
+				<h3 class="txt-color-red">Lastest Jobs</h3>
+				<a href="users" class="btn btn-primary btn-xs right">All Users </a>
+				<hr>
+				@if($ads->count())
+				<table class="table table-hover">
+			    	<thead>
+			            <tr><th>Name Surname</th>
+			                <th>Gender</th>
+			                <th>City</th>
+			                <th>Register Date</th>
+			            </tr>
+			         </thead>
+			         @foreach($ads as $a)
+			         <tbody>   
+			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$a->id}}">{{ucwords($a->ads_name)}}</a></td>
+			    		<td><a style="text-decoration:none;" href="#">{{$a->com_name}}</a></td>
+			    		<td><span>{{ucwords($a->work_place)}}</span></td>
+			    		<td><span>{{ Carbon::createFromTimestamp(strtotime($a->created_at))->diffForHumans() }} </span></td>
+			    	</tbody>
+			    	@endforeach
+				</table>
+			@endif
+
+			</div>
+		</div>
+</div>
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="well well display-inline" style="width:550px;">
