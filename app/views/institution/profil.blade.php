@@ -22,6 +22,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="well display-inline" style="width:820px;">
+      <a href="/all_ins" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all institution</a>
         <h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Company Profile</h3>
       <div class="right">
       <div class="btn-group">
@@ -141,7 +142,7 @@
                  </thead>
                  @foreach($adsInfo as $r)
                  <tbody>   
-                <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{$r->ads_name}}</a></td>
+                <td><a style="text-decoration: none;" href="/jobs/job/{{$r->id}}">{{$r->ads_name}}</a></td>
                 <td><span class="text-danger">{{$r->work_place}}</span></td>
                 <td><span class="text-warning">{{$r->pub_time}}</span></td>
                 <td><span class="label label-info">{{$r->languages}} </span></td>

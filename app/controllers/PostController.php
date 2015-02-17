@@ -137,14 +137,21 @@ class PostController extends BaseController {
 		$postComName = Input::get('com_name');
 		$company = SirketUser::find($id);
 		$companyName = $company->com_name;
-		
-		if ($postComName == $companyName) {
-			$company->delete();
-			return Redirect::to('/all_ins')->with('error', '<b>'.ucwords($companyName).'</b>'." ".'institution was successfully deleted.');	
-		} else {
-			return Redirect::back()->with('error', 'institution name was wrong!!');
+
+		$ads = AdsInfo::where('com_name','=', $companyName)->first();
+
+		if (is_null($ads)) {
+
+			if ($postComName == $companyName) {
+				$company->delete();
+				return Redirect::to('/all_ins')->with('error', '<b>'.ucwords($companyName).'</b>'." ".'institution was successfully deleted.');	
+			} else {
+				return Redirect::back()->with('error', 'institution name was wrong!!');
+			}
+			
+		}else{
+			return Redirect::back()->with('error', 'institution have some ads. Firstly delete them!!');
 		}
-		
 	}
 
 	public function mailer(){

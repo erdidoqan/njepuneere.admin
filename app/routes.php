@@ -10,6 +10,8 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/create-comp' , "PageController@create_comp");
 	Route::get('/all_ins' , "PageController@all_ins");
 	Route::get('/users' , "PageController@users");
+	Route::get('/jobs' , "PageController@jobs");
+	Route::get('/jobs/job/{id}' , "PageController@job");
 	Route::get('/all_ins/create-job/{id}' , "PageController@create_job");
 	Route::get('/all_ins/create-jobinfo/{id}' , "PageController@create_jobinfo");
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
@@ -20,6 +22,10 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
 	Route::get('/mailer', "PageController@mailer");
 	Route::get('/logo-update/{id}/upallads', "PageController@upallads");
+
+	//Ads setting
+
+	Route::get('/jobs/job/delete/{id}', "AdsController@delete");
 });
 
 //post controller

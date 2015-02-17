@@ -13,7 +13,7 @@
 				<a href="all_app" class="btn btn-lg btn-block btn-info">All Applicant</a>
 			</div>
 			<div class="well well display-inline">
-				<a href="all_app" class="btn btn-lg btn-block btn-warning">All Jobs</a>
+				<a href="jobs" class="btn btn-lg btn-block btn-warning">All Jobs</a>
 			</div>
 		</div>
 	</div>
@@ -23,15 +23,16 @@
 		<div class="col-sm-12">
 			<div class="well well display-inline" style="width:1130px;">
 				<h3 class="txt-color-red">Lastest Jobs</h3>
-				<a href="users" class="btn btn-primary btn-xs right">All Users </a>
+				<a href="jobs" class="btn btn-primary btn-xs right">All Jobs </a>
 				<hr>
 				@if($ads->count())
 				<table class="table table-hover">
 			    	<thead>
-			            <tr><th>Name Surname</th>
-			                <th>Gender</th>
-			                <th>City</th>
-			                <th>Register Date</th>
+			            <tr><th>Jobs</th>
+			                <th>Companies</th>
+			                <th>Place</th>
+			                <th>Date</th>
+			                <th>Approval</th>
 			            </tr>
 			         </thead>
 			         @foreach($ads as $a)
@@ -40,6 +41,11 @@
 			    		<td><a style="text-decoration:none;" href="#">{{$a->com_name}}</a></td>
 			    		<td><span>{{ucwords($a->work_place)}}</span></td>
 			    		<td><span>{{ Carbon::createFromTimestamp(strtotime($a->created_at))->diffForHumans() }} </span></td>
+			    		<td> 
+			    			<a href="" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i></a>
+			    			<a href="" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></a> 
+			    			<a href="" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-cog"></i></a> 
+			    		</td>
 			    	</tbody>
 			    	@endforeach
 				</table>

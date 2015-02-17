@@ -32,6 +32,21 @@ class PageController extends BaseController {
 		return View::make('user.all')->with('users',$users);
 	}
 
+	public function jobs()
+	{
+		$jobs = AdsInfo::orderBy('id','DESC')->paginate(25);
+		return View::make('jobs.all')->with('jobs',$jobs);
+	}
+
+	public function job($id)
+	{
+		$adsInfo = AdsInfo::find($id);
+		$ads = Ads::find($id);
+		$app = AllApply::where('ads_id','=',$id)->orderBy('id','DESC')->paginate(15);
+		
+		return View::make('jobs.job')->with(compact('adsInfo', 'ads', 'app'));
+	}
+
 	public function all_ins()
 	{
 		$company = SirketUser::orderBy('id','DESC')->paginate(15);
