@@ -10,7 +10,3 @@ class AdsInfo extends \Eloquent {
         return $this->belongsToMany('Ads');
     }
 }
-
-
-
-

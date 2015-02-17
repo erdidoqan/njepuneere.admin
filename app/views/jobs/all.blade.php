@@ -42,6 +42,7 @@
 			                <th>Companies</th>
 			                <th>Place</th>
 			                <th>Date</th>
+			                <th>Status</th>
 			                <th>Approval</th>
 			            </tr>
 			         </thead>
@@ -51,9 +52,16 @@
 			    		<td><a style="text-decoration:none;" href="#">{{$a->com_name}}</a></td>
 			    		<td><span>{{ucwords($a->work_place)}}</span></td>
 			    		<td><span>{{ Carbon::createFromTimestamp(strtotime($a->created_at))->diffForHumans() }} </span></td>
+			    		<td>
+			    		@if($a->active == 1)
+			    			<span class="badge bg-color-green"> <i class="fa fa-circle"></i> </span> Online
+			    		@else
+			    			<span class="badge bg-color-red"> <i class="fa fa-circle"></i> </span> Passive
+			    		@endif
+			    		</td>
 			    		<td> 
-			    			<a href="jobs/job/{{$a->id}}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i></a>
-			    			<a href="jobs/job/{{$a->id}}" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></a> 
+			    			<a href="jobs/job/active/{{$a->id}}" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i></a>
+			    			<a href="jobs/job/passive/{{$a->id}}" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></a> 
 			    			<a href="jobs/job/{{$a->id}}" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-cog"></i></a> 
 			    		</td>
 			    	</tbody>

@@ -12,6 +12,9 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/users' , "PageController@users");
 	Route::get('/jobs' , "PageController@jobs");
 	Route::get('/jobs/job/{id}' , "PageController@job");
+	Route::get('/jobs/job/active/{id}' , "PageController@active");
+	Route::get('/jobs/job/passive/{id}' , "PageController@passive");
+
 	Route::get('/all_ins/create-job/{id}' , "PageController@create_job");
 	Route::get('/all_ins/create-jobinfo/{id}' , "PageController@create_jobinfo");
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
@@ -26,6 +29,8 @@ Route::group(array('before' => 'auth'), function(){
 	//Ads setting
 
 	Route::get('/jobs/job/delete/{id}', "AdsController@delete");
+	Route::get('/jobs/job/active/{id}' , "AdsController@active");
+	Route::get('/jobs/job/passive/{id}' , "AdsController@passive");
 });
 
 //post controller

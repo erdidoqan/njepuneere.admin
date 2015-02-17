@@ -4,6 +4,33 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8">
+    @if ($errors->has())
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Error!</strong> {{$errors->first()}}
+                </div>
+                @endif
+                
+                @if (Session::has('error'))
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Error!</strong> {{Session::get('error')}}
+                </div>
+                @endif
+                
+                @if (Session::has('success'))
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Success!</strong> {{Session::get('success')}}
+                </div>
+                @endif 
+
+                @if (Session::has('warning'))
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <strong>Warning!</strong> {{Session::get('warning')}}
+                </div>
+                @endif 
 			<div class="well display-inline" style="width:770px;">
 			<a href="/jobs" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all jobs</a>
 <h3 class="text-danger"><strong>{{ucwords($adsInfo->com_name)}}</strong>'s Ads</h3>
@@ -42,12 +69,7 @@
     </div>
   </div>
   </div>
-@if (Session::has('warning'))
-<div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-    <strong>Warning!</strong> {{Session::get('warning')}}
-</div>
-@endif 
+
   <div class="panel panel-fixed panel-primary">
     <div class="panel-body">
       <div class="col-sm-12">
@@ -153,6 +175,19 @@
 			</div>
 		</div>
 
+    <div class="col-sm-4">
+    @if($adsInfo->active == 1)
+      <div class="well display-inline bg-color-green text-center" style="width:340px;">
+          <h3 class="txt-color-white">Active</h3>
+      </div>
+      @else
+      <div class="well display-inline bg-color-red text-center" style="width:340px;">
+          <h1 class="txt-color-white">Passive</h1>
+      </div>
+      @endif
+
+    </div>
+
 		<div class="col-sm-4">
 			<div class="well display-inline" style="width:340px;">
 			<h5 class="text-danger">{{ucwords($adsInfo->com_name)}}'s <small>({{ucwords($adsInfo->ads_name)}}),</small> Applied List</h5>
@@ -184,6 +219,8 @@
 			</div>
 		</div>
 
+    
+
 	</div>
 </div>
 
@@ -200,8 +237,8 @@
             </span>
           </button></div>
           <ul class="dropdown-menu dropdown-menu-right" role="menu">
-            <li><a href="#" rel="tooltip" data-placement="left" title="Passive"><i class="fa fa-remove"></i></a></li>
-            <li><a href="#" rel="tooltip" data-placement="left" title="Active"><i class="fa fa-check"></i></a></li>
+            <li><a href="/jobs/job/passive/{{$adsInfo->id}}" rel="tooltip" data-placement="left" title="Passive"><i class="fa fa-remove"></i></a></li>
+            <li><a href="/jobs/job/active/{{$adsInfo->id}}" rel="tooltip" data-placement="left" title="Active"><i class="fa fa-check"></i></a></li>
             <li><a href="#" rel="tooltip" data-placement="left" title="Edit"><i class="fa fa-edit"></i></a></li>
             <li><a href="#AdsDel" data-toggle="modal" rel="tooltip" data-placement="left" title="Delete"><i class="fa fa-trash-o"></i></a></li>
           </ul>
