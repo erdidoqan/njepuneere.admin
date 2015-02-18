@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container">
-  <div class="row" id="user">
-    <div class="col-sm-8">
+	<div class="row">
+		<div class="col-sm-8">
     @if ($errors->has())
                 <div class="alert alert-warning alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -31,11 +31,10 @@
                     <strong>Warning!</strong> {{Session::get('warning')}}
                 </div>
                 @endif 
-      <div class="well display-inline" style="width:770px;">
-      <a href="/jobs" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all jobs</a>
+			<div class="well display-inline" style="width:770px;">
+			<a href="/jobs" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all jobs</a>
 <h3 class="text-danger"><strong>{{ucwords($adsInfo->com_name)}}</strong>'s Ads</h3>
       <div class="right">
-            <button id="enable" class="btn btn-default">enable / disable</button>
       <div class="btn-group">
               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
                 <i class="fa fa-gear fa-lg"></i>  <span class="caret"></span>
@@ -56,13 +55,23 @@
 <div class="message"></div>
       <div class="col-sm-12">
       <div class="col-sm-6">
-        <h1 class="text-danger"><b href="#" id="com_name" data-type="text" data-pk="{{ $adsInfo->id }}" data-title="Enter Job Title"> {{ucwords($adsInfo->com_name)}}</b></h1>
-        
+      <h1 class="text-danger"><b> {{ucwords($adsInfo->com_name)}}</b></h1>
+      
+      <form role="form" method="get" id="subscribe">
+        <div class="input-group" style="display:none" >
+            <input type="text" class="form-control input-lg" name="com_name" value="{{ucwords($adsInfo->com_name)}}" /><br>
+            <div class="input-group-btn">
+                <button class="btn btn-default btn-lg"><i class="glyphicon glyphicon-send"></i></button>
+            </div>
+        </div>
+      </form>
 
 
+                <h6>{{ucwords($adsInfo->ads_name)}}</h6>
+                <input type="text" class="form-control input-lg" name="ads_name" style="display:none" value="{{ucwords($adsInfo->ads_name)}}" />
+              
 
-        <h6 href="#" id="ads_name" data-type="text" data-pk="{{ $adsInfo->id }}" data-title="Enter Job Title">{{ucwords($adsInfo->ads_name)}}</h6>
-            
+
             </div>
             <div class="col-sm-6">
                 <img src="{{User::$img_sirket_src."".$adsInfo->logo}}" alt="post img" class="pull-right img-responsive img-thumbnail" style="width:200px; height=150px; ">
@@ -76,30 +85,15 @@
       <div class="col-sm-12">
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Job Description</h5><br>
                 
-              <form action="/job/desc/{{$adsInfo->id}}" method="post">
-                <div class="right">
-                  <button type="submit" class="btn btn-primary">save</button>
-                </div>
+        <p> {{$adsInfo->job_desc}}</p>
 
-                <textarea name="job_desc" class="ckeditor" rows="10" cols="80">
-                  {{$adsInfo->job_desc}}
-                </textarea>
-              </form>
-
-
+  
+            <input type="textarea" class="ckeditor" style="display:none" name="job_desc" value="{{ucwords($adsInfo->job_desc)}}" />
+            
             <hr>
   
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Required Qualifications</h5><br>
-                <form action="/job/qua/{{$adsInfo->id}}" method="post">
-                  <div class="right">
-                    <button class="btn btn-primary">save</button>
-                  </div>
-                  <textarea name="qua" class="ckeditor" rows="10" cols="80">
-                    {{$adsInfo->qua}}
-                  </textarea>
-                </form>
-
-            <hr>
+                 <p> {{$adsInfo->qua}}</p><hr>
 
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Additional Information</h5>
                           <!-- Text input-->
@@ -114,7 +108,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="textinput">Business Area</label>
                     <div class="col-sm-6">
-                      <p id="bus_area" data-type="text" data-pk="{{ $ads->id }}"> {{$ads->bus_area}} </p>
+                      <p> {{$ads->bus_area}} </p>
                     </div>
                 </div>
 
@@ -122,7 +116,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="textinput">Position</label>
                     <div class="col-sm-6">
-                      <p id="position" data-type="text" data-pk="{{ $ads->id }}"> {{$ads->position}} </p>
+                      <p> {{$ads->position}} </p>
                     </div>
                 </div>
 
@@ -130,7 +124,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="textinput">Working Style</label>
                     <div class="col-sm-6">
-                      <p id="working_style" data-type="text" data-pk="{{ $ads->id }}">{{$ads->working_style}}</p>
+                      <p>{{$ads->working_style}}</p>
                     </div>
                 </div>
 
@@ -138,7 +132,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="textinput">Experience</label>
                     <div class="col-sm-6">
-                      <p id="exp" data-type="text" data-pk="{{ $ads->id }}">{{$ads->exp}}</p>
+                      <p>{{$ads->exp}}</p>
                     </div>
                 </div>
 
@@ -146,7 +140,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label" for="textinput">Education Degre</label>
                     <div class="col-sm-6">
-                      <p id="degree" data-type="text" data-pk="{{ $ads->id }}">{{$ads->degree}}</p>
+                      <p>{{$ads->degree}}</p>
                     </div>
                 </div>
 
@@ -193,15 +187,15 @@
               </div> 
 
              
-          </div>
-        </div>
-      </div>
-    </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
 
     <div class="col-sm-4" id="side">
     @if($adsInfo->active == 1)
       <div class="well display-inline bg-color-green text-center" style="width:340px;">
-          <h1 class="txt-color-white">Active</h1> 
+          <h1 class="txt-color-white">Active</h1>
       </div>
       @else
       <div class="well display-inline bg-color-red text-center" style="width:340px;">
@@ -211,46 +205,45 @@
 
     </div>
 
-
-    </div>
-    <div class="col-sm-4" id="side-alt">
-      <div class="well display-inline" style="width:340px;">
-      <h5 class="text-danger">{{ucwords($adsInfo->com_name)}}'s <small>({{ucwords($adsInfo->ads_name)}}),</small> Applied List</h5>
-      
-      @if($app->count())
-          <table class="table table-hover">
-              <thead>
-                    <tr>
-                      <th>Name & Surname</th>
-                      <th>Date</th>
-                  </tr>
-                 </thead>
-                 @foreach($app as $r)
-               <tbody>   
-              
-              <td><span>{{ucwords($r->birey_adi)." ". ucwords($r->birey_soyadi)}}</span></td>
-              <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($r->created_at))->diffForHumans() }} </span></td>
-            </tbody>
-            @endforeach
-          </table>
-        @else
-            <div class="alert alert-warning alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Warning!</strong> Institution has not yet any application.
-            </div>
-        @endif
+		<div class="col-sm-4" id="side-alt">
+			<div class="well display-inline" style="width:340px;">
+			<h5 class="text-danger">{{ucwords($adsInfo->com_name)}}'s <small>({{ucwords($adsInfo->ads_name)}}),</small> Applied List</h5>
+			
+			@if($app->count())
+				  <table class="table table-hover">
+				      <thead>
+				            <tr>
+				              <th>Name & Surname</th>
+				              <th>Date</th>
+				          </tr>
+				         </thead>
+				         @foreach($app as $r)
+				       <tbody>   
+				      
+				      <td><span>{{ucwords($r->birey_adi)." ". ucwords($r->birey_soyadi)}}</span></td>
+				      <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($r->created_at))->diffForHumans() }} </span></td>
+				    </tbody>
+				    @endforeach
+				  </table>
+				@else
+				    <div class="alert alert-warning alert-dismissible" role="alert">
+				      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        <strong>Warning!</strong> Institution has not yet any application.
+				    </div>
+				@endif
 
 
-      </div>
-    </div>
+			</div>
+		</div>
 
     
 
-  </div>
+	</div>
+</div>
 
 <div class="container">
-  <div class="row">
-            <div id="inbox">
+	<div class="row">
+		        <div id="inbox">
           <div class="fab btn-group show-on-hover dropup">
               <div data-toggle="tooltip" data-placement="left" title="Settings" style="margin-left: 42px;">
           <button type="button" class="btn btn-primary btn-io dropdown-toggle" data-toggle="dropdown">
@@ -268,7 +261,7 @@
           </ul>
         </div>
         </div>
-  </div>
+	</div>
 </div>
 
 <div class="modal fade" id="AdsDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -293,124 +286,26 @@
     </div>
   </div>
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 <script type="text/javascript">
-  
-  $('.fab').hover(function () {
-      $(this).toggleClass('active');
+	
+	$('.fab').hover(function () {
+    	$(this).toggleClass('active');
+	});
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	});
+
+  $('#side').affix({
+    offset: {
+      top: 10,
+    }
   });
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+  $('#side-alt').affix({
+    offset: {
+      top: 10,
+    }
   });
-
-
-
-$(document).ready(function() {
-    //toggle `popup` / `inline` mode
-    $.fn.editable.defaults.mode = 'pop';  
-
-      $('#enable').click(function() {
-        $('#user .editable').editable('toggleDisabled');
-      }); 
-
-      $('#com_name').editable({
-        url: '{{ URL::route("quick_update") }}',
-        type: 'text',
-        name: 'com_name',
-        title: 'Enter Company Name',
-          validate: function(value) {
-             if($.trim(value) == '') return 'This field is required';
-          }
-      });
-
-      $('#ads_name').editable({
-        url: '{{ URL::route("quick_update") }}',
-        type: 'text',
-        name: 'ads_name',
-        title: 'Enter Job Title',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#job_desc').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'job_desc',
-        title: 'Enter Business Area',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#bus_area').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'bus_area',
-        title: 'Enter Business Area',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#position').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'position',
-        title: 'Enter Position',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#working_style').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'working_style',
-        title: 'Enter Working Style',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-    
-      $('#exp').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'exp',
-        title: 'Enter Experience',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#degree').editable({
-        url: '{{ URL::route("ads_update") }}',
-        type: 'text',
-        name: 'degree',
-        title: 'Enter Degree',
-            validate: function(value) {
-                 if($.trim(value) == '') return 'This field is required';
-            }
-      });
-
-      $('#user .editable').on('hidden', function(e, reason){
-        if(reason === 'save' || reason === 'nochange') {
-            var $next = $(this).closest('tr').next().find('.editable');
-            if($('#autoopen').is(':checked')) {
-                setTimeout(function() {
-                    $next.editable('show');
-                }, 300); 
-            } else {
-                $next.focus();
-            } 
-        }
-   });
-    
-});
-
 
 </script>
 

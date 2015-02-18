@@ -31,6 +31,12 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/jobs/job/delete/{id}', "AdsController@delete");
 	Route::get('/jobs/job/active/{id}' , "AdsController@active");
 	Route::get('/jobs/job/passive/{id}' , "AdsController@passive");
+	//Route::post('job/quick_update' , "AdsController@EditCom");
+
+	Route::post('job/quick_update', array('as' => 'quick_update', 'uses' => 'AdsController@EditCom'));
+	Route::post('job/ads_update', array('as' => 'ads_update', 'uses' => 'AdsController@EditAds'));
+	Route::post('/job/desc/{id}', "AdsController@EditDesc");
+	Route::post('/job/qua/{id}', "AdsController@EditQua");
 });
 
 //post controller
@@ -41,5 +47,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('/logo_up/{id}' , "PostController@logo_up");
 	Route::post('/crop/{id}', "PostController@crop");
 	Route::post('/delete/company/{id}',"PostController@deletecom");
-	Route::post('/mailer',"PostController@mailer");
+	
 });

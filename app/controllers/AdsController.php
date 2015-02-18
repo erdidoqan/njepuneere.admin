@@ -27,5 +27,39 @@ class AdsController extends BaseController {
         return Redirect::to('jobs')->with('error',"Job was successfully deleted.");
 	}
 
+	public function EditCom()
+	{
+		$inputs = Input::all();
+		$ads = AdsInfo::find($inputs['pk']);
+		$ads->$inputs['name'] = $inputs['value'];
+		$ads->save();
+		return Redirect::back();
+	}
 
+	public function EditAds()
+	{
+		$inputs = Input::all();
+		$ads = Ads::find($inputs['pk']);
+		$ads->$inputs['name'] = $inputs['value'];
+		$ads->save();
+		return Redirect::back();
+	}
+
+	public function EditDesc($id)
+	{
+		$inputs = Input::all();
+		$ads = AdsInfo::find($id);
+		$ads->job_desc = $inputs['job_desc'];
+		$ads->save();
+		return Redirect::back();
+	}
+
+	public function EditQua($id)
+	{
+		$inputs = Input::all();
+		$ads = AdsInfo::find($id);
+		$ads->qua = $inputs['qua'];
+		$ads->save();
+		return Redirect::back();
+	}
 }
