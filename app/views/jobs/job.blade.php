@@ -75,30 +75,89 @@
     <div class="panel-body">
       <div class="col-sm-12">
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Job Description</h5><br>
-                
-              <form action="/job/desc/{{$adsInfo->id}}" method="post">
-                <div class="right">
-                  <button type="submit" class="btn btn-primary">save</button>
+              <div id="kutu">
+                <div id="desc">
+                    <p>{{$adsInfo->job_desc}}</p>
+                    <div class="note">
+                      For edit, just click.  
+                    </div>
                 </div>
 
-                <textarea name="job_desc" class="ckeditor" rows="10" cols="80">
-                  {{$adsInfo->job_desc}}
-                </textarea>
-              </form>
+                <div id="desc-form" style="display:none;">
+                    <form action="/job/desc/{{$adsInfo->id}}" method="post">
+                      <div class="right">
+                        <button type="submit" class="btn btn-primary">save</button>
+                      </div>
 
+                      <textarea name="job_desc" class="ckeditor" rows="10" cols="80">
+                        {{$adsInfo->job_desc}}
+                      </textarea>
+                    </form>
+                </div>
+              </div>
+<script type="text/javascript">
+  
+$(document).ready(function(){
+
+  $('#desc').click(function() {
+    $('#desc-form').show();
+    $('#desc').hide(); 
+  });
+
+  $('*').click(function (e) {
+    if (!$(e.target).is('#kutu') && !$(e.target).is('#kutu *')) {
+             $('#desc-form').hide();
+             $('#desc').show();
+        }
+
+
+
+  });
+});
+</script>
 
             <hr>
   
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Required Qualifications</h5><br>
-                <form action="/job/qua/{{$adsInfo->id}}" method="post">
-                  <div class="right">
-                    <button class="btn btn-primary">save</button>
+                <div id="kutu-qua">
+                  <div id="qua">
+                      <p>{{$adsInfo->qua}}</p>
+                      <div class="note">
+                      For edit, just click.  
+                    </div>
                   </div>
-                  <textarea name="qua" class="ckeditor" rows="10" cols="80">
-                    {{$adsInfo->qua}}
-                  </textarea>
-                </form>
 
+                  <div id="qua-form" style="display:none;">
+                    <form action="/job/qua/{{$adsInfo->id}}" method="post">
+                      <div class="right">
+                        <button class="btn btn-primary">save</button>
+                      </div>
+                      <textarea name="qua" class="ckeditor" rows="10" cols="80">
+                        {{$adsInfo->qua}}
+                      </textarea>
+                    </form>
+                  </div>
+                </div>
+<script type="text/javascript">
+  
+$(document).ready(function(){
+
+  $('#qua').click(function() {
+    $('#qua-form').show();
+    $('#qua').hide(); 
+  });
+
+  $('*').click(function (e) {
+    if (!$(e.target).is('#kutu-qua') && !$(e.target).is('#kutu-qua *')) {
+             $('#qua-form').hide();
+             $('#qua').show();
+        }
+
+
+
+  });
+});
+</script>
             <hr>
 
                 <h5 class="text-success"><span class="glyphicon glyphicon-play"></span> Additional Information</h5>
