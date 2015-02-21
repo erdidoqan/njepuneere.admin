@@ -65,7 +65,7 @@
             
             </div>
             <div class="col-sm-6">
-                <img src="{{User::$img_sirket_src."".$adsInfo->logo}}" alt="post img" class="pull-right img-responsive img-thumbnail" style="width:200px; height=150px; ">
+               <a href="/logo-update/{{$adsInfo->user_id}}"> <img src="{{User::$img_sirket_src."".$adsInfo->logo}}" alt="post img" class="pull-right img-responsive img-thumbnail" style="width:200px; height=150px; "></a>
       </div>
     </div>
   </div>
