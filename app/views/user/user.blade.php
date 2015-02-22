@@ -21,7 +21,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="well display-inline" style="width:820px;">
+			<div class="well display-inline" style="width:1024px;">
       <a href="/users" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all users</a>
         <h3 class="text-danger"><strong>{{ucwords($user->adi)." ".ucwords($user->soyadi)}} </strong>, User Profile</h3>
       <div class="right">
@@ -114,7 +114,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<div class="well display-inline" style="width:820px;">
+			<div class="well display-inline" style="width:1024px;">
 				<h3 class="text-danger"><strong>{{ucwords($user->adi)." ".ucwords($user->soyadi)}}</strong>, Applicant Lists</h3>
 
       
