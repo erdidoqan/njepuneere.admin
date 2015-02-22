@@ -11,7 +11,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_ins' , "PageController@all_ins");
 	
 	Route::get('/users' , "PageController@users");
-	Route::get('/users/{adi}/{id}', "PageController@user");
+	Route::get('/users/{adi}/{id}', "PageController@user")->where('adi', '[A-Za-z]+');
 
 	Route::get('/jobs' , "PageController@jobs");
 	Route::get('/jobs/job/{id}' , "PageController@job");
