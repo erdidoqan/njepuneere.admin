@@ -41,11 +41,11 @@
           </div>
       </div>
 			
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         		<img src="{{$user->pr_img}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ><hr>
             
 			</div>
-   			<div class="col-sm-7">
+   			<div class="col-sm-6">
         		<div class="col-sm-5">
             		Name & Surname:
          		</div>
