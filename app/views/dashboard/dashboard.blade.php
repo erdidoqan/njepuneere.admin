@@ -32,15 +32,23 @@
 			                <th>Companies</th>
 			                <th>Place</th>
 			                <th>Date</th>
+			                <th>Status</th>
 			                <th>Approval</th>
 			            </tr>
 			         </thead>
 			         @foreach($ads as $a)
 			         <tbody>   
-			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$a->id}}">{{ucwords($a->ads_name)}}</a></td>
-			    		<td><a style="text-decoration:none;" href="#">{{$a->com_name}}</a></td>
+			    		<td><a style="text-decoration: none;" href="/jobs/job/{{$a->id}}">{{ucwords($a->ads_name)}}</a></td>
+			    		<td><a style="text-decoration:none;" href="/all_ins/profile_ins/{{$a->user_id}}">{{$a->com_name}}</a></td>
 			    		<td><span>{{ucwords($a->work_place)}}</span></td>
 			    		<td><span>{{ Carbon::createFromTimestamp(strtotime($a->created_at))->diffForHumans() }} </span></td>
+			    		<td>
+			    		@if($a->active == 1)
+			    			<span class="badge bg-color-green"> <i class="fa fa-circle"></i> </span> Online
+			    		@else
+			    			<span class="badge bg-color-red"> <i class="fa fa-circle"></i> </span> Passive
+			    		@endif
+			    		</td>
 			    		<td> 
 			    			<a href="" class="btn btn-success btn-xs"><i class="glyphicon glyphicon-ok"></i></a>
 			    			<a href="" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i></a> 

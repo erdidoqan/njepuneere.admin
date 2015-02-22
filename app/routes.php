@@ -9,7 +9,10 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/dashboard' , "PageController@dashboard");
 	Route::get('/create-comp' , "PageController@create_comp");
 	Route::get('/all_ins' , "PageController@all_ins");
+	
 	Route::get('/users' , "PageController@users");
+	Route::get('/users/{adi}/{id}', "PageController@user");
+
 	Route::get('/jobs' , "PageController@jobs");
 	Route::get('/jobs/job/{id}' , "PageController@job");
 	Route::get('/jobs/job/active/{id}' , "PageController@active");
@@ -19,6 +22,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_ins/create-jobinfo/{id}' , "PageController@create_jobinfo");
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
 	Route::get('all_ins/profile_ins/{id}' , "PageController@profil");
+
 	Route::get('logo-update/{id}', "PageController@logo_up");
 	Route::get('/all_app', "PageController@allApp");
 	Route::get('/applicant/{id}', "PageController@applicant");

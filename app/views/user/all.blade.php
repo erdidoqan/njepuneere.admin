@@ -20,7 +20,7 @@
 			         </thead>
 			         @foreach($users as $r)
 			         <tbody>   
-			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{ucwords($r->adi)." ". ucwords($r->soyadi)}}</a></td>
+			    		<td><a style="text-decoration: none;" href="/users/{{strtolower($r->adi)."-".strtolower($r->soyadi)}}/{{$r->id}}">{{ucwords($r->adi)." ". ucwords($r->soyadi)}}</a></td>
 			    		<td> <span>{{ucwords($r->cinsiyet)}}</span> </td>
 			    		<td><span>{{$r->email}}</span></td>
 			    		<td><span>{{ucwords($r->ulke)." / ". ucwords($r->sehir)}}</span></td>

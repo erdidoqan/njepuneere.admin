@@ -32,6 +32,12 @@ class PageController extends BaseController {
 		return View::make('user.all')->with('users',$users);
 	}
 
+	public function user($adi, $id)
+	{
+		$user = BireyUser::find($id);
+		return View::make('user.user')->with('user',$user);
+	}
+
 	public function jobs()
 	{
 		$jobs = AdsInfo::orderBy('active','DESC')->orderBy('id','ASC')->paginate(25);
