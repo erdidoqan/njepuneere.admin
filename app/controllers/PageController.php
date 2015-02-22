@@ -34,6 +34,8 @@ class PageController extends BaseController {
 
 	public function user($adi, $id)
 	{
+		Route::pattern('id', '[0-9]+');
+		Route::pattern('adi', '[0-9a-z-]+');
 		$user = BireyUser::find($id);
 		return View::make('user.user')->with('user',$user);
 	}

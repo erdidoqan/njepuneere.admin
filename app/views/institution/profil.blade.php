@@ -57,55 +57,55 @@
    					Company Name:
    				</div>
    				<div class="col-sm-7">
-   					<strong onclick="toggleId()">{{ucwords($sirket->com_name)}}</strong>
+   					<strong>-{{ucwords($sirket->com_name)}}</strong>
    				</div>
    				<div class="col-sm-5">
    					Company NIPT:
    				</div>
    				<div class="col-sm-7">
-   					<strong><code>{{ucwords($sirket->com_nipt)}}</code></strong>
+   					<strong><code>-{{ucwords($sirket->com_nipt)}}</code></strong>
    				</div>
    				<div class="col-sm-5">
    					Company Sector:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->com_sector)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->com_sector)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					Nr of Employee:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->nr_emp)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->nr_emp)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					Company Address:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->com_add)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->com_add)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					Company Zip Code:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->zip_code)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->zip_code)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					Country:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->country)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->country)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					City:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->city)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->city)}}</span></strong>
    				</div>
    				<div class="col-sm-5">
    					Web Address:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>{{ucwords($sirket->web_add)}}</span></strong>
+   					<strong><span>-{{ucwords($sirket->web_add)}}</span></strong>
    				</div>
 				        
    			</div>
