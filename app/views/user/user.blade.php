@@ -42,7 +42,7 @@
       </div>
 			
       <div class="col-sm-3">
-        		<img src="{{$user->pr_img}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ><hr>
+        		<img src="{{$user->pr_img}}" alt="logo" style="max-width:200px;" class="pfimg img-rounded" ><hr>
             
 			</div>
    			<div class="col-sm-7">
