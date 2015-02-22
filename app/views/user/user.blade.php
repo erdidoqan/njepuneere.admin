@@ -56,37 +56,37 @@
             		Email:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->email}}
+            		-{{$user->email}}
             	</div>
             	<div class="col-sm-5">
             		Gender:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->cinsiyet}}
+            		-{{$user->cinsiyet}}
             	</div>
             	<div class="col-sm-5">
             		Birthday:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->d_tarihi}}
+            		-{{$user->d_tarihi}}
             	</div>
             	<div class="col-sm-5">
             		Location:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->sehir." / ".$user->ulke}}
+            		-{{$user->sehir." / ".$user->ulke}}
             	</div>
             	<div class="col-sm-5">
             		Lastest Jobs:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->sonis}}
+            		-{{$user->sonis}}
             	</div>
             	<div class="col-sm-5">
             		Situation:
             	</div>
             	<div class="col-sm-7">
-            		{{$user->durum}}
+            		-{{$user->durum}}
             	</div>
             	<div class="col-sm-5">
             		Email Active:
