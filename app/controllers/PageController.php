@@ -34,7 +34,7 @@ class PageController extends BaseController {
 
 	public function user($adi, $id)
 	{
-		$user = BireyUser::find($id)->where('adi', '[A-Za-z]+');
+		$user = BireyUser::find($id);
 		return View::make('user.user')->with('user',$user);
 	}
 
