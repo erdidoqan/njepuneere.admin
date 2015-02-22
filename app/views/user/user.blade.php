@@ -42,7 +42,7 @@
       </div>
 			
       <div class="col-sm-4">
-        		<img src="http://njepuneere.com/{{$user->pr_img}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ><hr>
+        		<img src="{{$user->pr_img}}" alt="logo" style="max-width:235px;" class="pfimg img-rounded" ><hr>
             
 			</div>
    			<div class="col-sm-6">
