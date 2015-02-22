@@ -43,62 +43,62 @@
 			
       <div class="col-sm-3">
         		<img src="{{$user->pr_img}}" alt="logo" style="max-width:200px;" class="pfimg img-rounded" ><hr>
-            
-			</div>
-   			<div class="col-sm-7">
-        		<div class="col-sm-5">
-            		Name & Surname:
-         		</div>
-          		<div class="col-sm-7">
-            		<strong>{{ucwords($user->adi)." ".ucwords($user->soyadi)}}</strong>
-            	</div>
-            	<div class="col-sm-5">
-            		Email:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->email}}
-            	</div>
-            	<div class="col-sm-5">
-            		Gender:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->cinsiyet}}
-            	</div>
-            	<div class="col-sm-5">
-            		Birthday:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->d_tarihi}}
-            	</div>
-            	<div class="col-sm-5">
-            		Location:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->sehir." / ".$user->ulke}}
-            	</div>
-            	<div class="col-sm-5">
-            		Lastest Jobs:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->sonis}}
-            	</div>
-            	<div class="col-sm-5">
-            		Situation:
-            	</div>
-            	<div class="col-sm-7">
-            		-{{$user->durum}}
-            	</div>
-            	<div class="col-sm-5">
-            		Email Active:
-            	</div>
-            	<div class="col-sm-7">
-            		@if($user->active == 1)
-				      		<span class="text-success">Active</span>
-				      @else
-				      		<span class="text-danger">Passive</span>
-				      @endif
-            	</div>
-			</div>     
+      </div>
+			<div class="col-sm-7" style="left: 30px;">
+			
+    		<div class="col-sm-5">
+        		Name & Surname:
+     		</div>
+      		<div class="col-sm-7">
+        		<strong>{{ucwords($user->adi)." ".ucwords($user->soyadi)}}</strong>
+        	</div>
+        	<div class="col-sm-5">
+        		Email:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->email}}
+        	</div>
+        	<div class="col-sm-5">
+        		Gender:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->cinsiyet}}
+        	</div>
+        	<div class="col-sm-5">
+        		Birthday:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->d_tarihi}}
+        	</div>
+        	<div class="col-sm-5">
+        		Location:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->sehir." / ".$user->ulke}}
+        	</div>
+        	<div class="col-sm-5">
+        		Lastest Jobs:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->sonis}}
+        	</div>
+        	<div class="col-sm-5">
+        		Situation:
+        	</div>
+        	<div class="col-sm-7">
+        		-{{$user->durum}}
+        	</div>
+        	<div class="col-sm-5">
+        		Email Active:
+        	</div>
+        	<div class="col-sm-7">
+        		@if($user->active == 1)
+			      		<span class="text-success">Active</span>
+			      @else
+			      		<span class="text-danger">Passive</span>
+			      @endif
+        	</div>
+		</div>     
    			<div class="col-sm-2">
    				<small>Creation Date:<br>{{$user->created_at}}  </small></strong><hr>
    			</div>
