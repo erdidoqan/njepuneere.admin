@@ -42,7 +42,7 @@ class PageController extends BaseController {
 
 	public function jobs()
 	{
-		$jobs = AdsInfo::orderBy('create_at','ASC')->paginate(25);
+		$jobs = AdsInfo::orderBy('id','DESC')->paginate(25);
 		return View::make('jobs.all')->with('jobs',$jobs);
 	}
 
