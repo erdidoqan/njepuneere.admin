@@ -57,63 +57,63 @@
    					Company Name:
    				</div>
    				<div class="col-sm-7">
-   					<strong>-{{ucwords($sirket->com_name)}}</strong>
+   					-{{ucwords($sirket->com_name}}
    				</div>
    				<div class="col-sm-5">
    					Company NIPT:
    				</div>
    				<div class="col-sm-7">
-   					<strong><code>-{{ucwords($sirket->com_nipt)}}</code></strong>
+   					<code>-{{ucwords($sirket->com_nipt)}</code>
    				</div>
    				<div class="col-sm-5">
    					Company Sector:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->com_sector)}}</span></strong>
+   					-{{ucwords($sirket->com_sector)}
    				</div>
    				<div class="col-sm-5">
    					Nr of Employee:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->nr_emp)}}</span></strong>
+   					-{{ucwords($sirket->nr_emp)}
    				</div>
    				<div class="col-sm-5">
    					Company Address:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->com_add)}}</span></strong>
+   					-{{ucwords($sirket->com_add)}
    				</div>
    				<div class="col-sm-5">
    					Company Zip Code:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->zip_code)}}</span></strong>
+   					-{{ucwords($sirket->zip_code)}
    				</div>
    				<div class="col-sm-5">
    					Country:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->country)}}</span></strong>
+   					-{{ucwords($sirket->country)}
    				</div>
    				<div class="col-sm-5">
    					City:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->city)}}</span></strong>
+   					-{{ucwords($sirket->city)}
    				</div>
    				<div class="col-sm-5">
    					Web Address:
    				</div>
    				<div class="col-sm-7">
-   					<strong><span>-{{ucwords($sirket->web_add)}}</span></strong>
+   					-{{ucwords($sirket->web_add)}
    				</div>
 				        
    			</div>
    			<div class="col-sm-2">
-   				<small>Creation Date:<br>{{$sirket->created_at}} </small></strong><hr>
+   				<small>Creation Date:<br>{{$sirket->created_at}} <hr>
    			</div>
    			<div class="col-sm-2">
-   				<small>Last Updated Date:<br>{{$sirket->updated_at}} </small></strong><hr>
+   				<small>Last Updated Date:<br>{{$sirket->updated_at}} <hr>
    			</div>
         <div class="col-sm-2">
           <a href="/all_ins/create-job/{{$sirket->id}}" class="btn btn-block btn-success">Create Job</a>
