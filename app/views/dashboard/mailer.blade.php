@@ -80,8 +80,8 @@
 @if (Session::has('mail'))
 <div class="container">
 	<div class="row">
-		<div class="col-sm-2" id="side" style="position: inherit !important;">
-        	<div class="well display-inline" style="width:300px;right: 5px;">
+		<div class="col-sm-2" id="side" >
+        	<div class="well display-inline" style="width:300px;right: 5px;position: inherit !important;">
           
 						@foreach(Session::get('mail') as $key)
 							{{$key.";"}}
