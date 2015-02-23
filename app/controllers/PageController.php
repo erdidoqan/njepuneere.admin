@@ -13,12 +13,12 @@ class PageController extends BaseController {
 		$user = BireyUser::orderBy('id','DESC')->paginate(5);
 		$com = SirketUser::orderBy('id','DESC')->paginate(5);
 		$ads = AdsInfo::orderBy('id','DESC')->paginate(5);
-
+		$allAds = AdsInfo::all();
+		$allUser = BireyUser::all();
+		$allApp = AllApply::all();
+		$allCom = SirketUser::all();
 		return View::make('dashboard.dashboard')
-		->with('app',$app)
-		->with('user',$user)
-		->with('com',$com)
-		->with('ads',$ads);
+		->with(compact('app', 'user', 'com', 'ads', 'allAds', 'allUser','allApp', 'allCom'));
 	}
 
 	public function create_comp()

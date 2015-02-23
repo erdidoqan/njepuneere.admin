@@ -2,6 +2,31 @@
 @section('content')
 <div class="container">
 	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Dashboard <span>&gt; Njepuneere Dashboard</span></h1>
+		</div>
+		<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
+			<ul id="sparks">
+				<li class="sparks-info">
+					<h5> Total Jobs <span class="txt-color-blue"><i class="fa fa-th-list"></i>&nbsp;{{ count($allAds) }}</span></h5>
+				</li>
+				<li class="sparks-info">
+					<h5> Total Users <span class="txt-color-purple"><i class="fa fa-user"></i>&nbsp;{{ count($allUser) }}</span></h5>
+				</li>
+				<li class="sparks-info">
+					<h5> Total Com <span class="txt-color-greenDark"><i class="fa fa-institution"></i>&nbsp;{{ count($allCom) }}</span></h5>
+				</li>
+				<li class="sparks-info">
+					<h5> Total App <span class="txt-color-green"><i class="fa fa-eye"></i>&nbsp;{{ count($allApp) }}</span></h5>
+					<div class="sparkline txt-color-greenDark hidden-mobile hidden-md hidden-sm"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
 		<div class="col-sm-9">
 			<div class="well well display-inline">
 				<a href="create-comp" class="btn btn-lg btn-block btn-success">Create Institution</a>
