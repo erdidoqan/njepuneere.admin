@@ -63,49 +63,49 @@
    					Company NIPT:
    				</div>
    				<div class="col-sm-7">
-   					<code>-{{ucwords($sirket->com_nipt)}</code>
+   					<code>-{{ucwords($sirket->com_nipt)}}</code>
    				</div>
    				<div class="col-sm-5">
    					Company Sector:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->com_sector)}
+   					-{{ucwords($sirket->com_sector)}}
    				</div>
    				<div class="col-sm-5">
    					Nr of Employee:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->nr_emp)}
+   					-{{ucwords($sirket->nr_emp)}}
    				</div>
    				<div class="col-sm-5">
    					Company Address:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->com_add)}
+   					-{{ucwords($sirket->com_add)}}
    				</div>
    				<div class="col-sm-5">
    					Company Zip Code:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->zip_code)}
+   					-{{ucwords($sirket->zip_code)}}
    				</div>
    				<div class="col-sm-5">
    					Country:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->country)}
+   					-{{ucwords($sirket->country)}}
    				</div>
    				<div class="col-sm-5">
    					City:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->city)}
+   					-{{ucwords($sirket->city)}}
    				</div>
    				<div class="col-sm-5">
    					Web Address:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->web_add)}
+   					-{{ucwords($sirket->web_add)}}
    				</div>
 				        
    			</div>
