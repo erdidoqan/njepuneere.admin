@@ -57,7 +57,7 @@
    					Company Name:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->com_name}}
+   					-{{ucwords($sirket->com_name)}}
    				</div>
    				<div class="col-sm-5">
    					Company NIPT:
