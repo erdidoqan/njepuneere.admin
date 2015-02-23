@@ -27,9 +27,11 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_app', "PageController@allApp");
 	Route::get('/applicant/{id}', "PageController@applicant");
 	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
-	Route::get('/mailer', "PageController@mailer");
 	Route::get('/logo-update/{id}/upallads', "PageController@upallads");
 
+	Route::get('/mailer', "PageController@mailer");
+	Route::post('/mailer', "PostController@mailer");
+	Route::get('/add-all-email', "PageController@allmail");
 	//Ads setting
 
 	Route::get('/jobs/job/delete/{id}', "AdsController@delete");
@@ -51,5 +53,5 @@ Route::group(array('before' => 'auth'), function(){
 	Route::post('/logo_up/{id}' , "PostController@logo_up");
 	Route::post('/crop/{id}', "PostController@crop");
 	Route::post('/delete/company/{id}',"PostController@deletecom");
-	Route::post('/mailer', "PostController@mailer");
+	
 });

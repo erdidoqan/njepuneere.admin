@@ -150,6 +150,13 @@ class PageController extends BaseController {
 		return View::make('dashboard.mailer');
 	}
 
+	public function allmail(){
+		$allmail = BireyUser::lists('email');
+
+		return Redirect::back()->with('mail', $allmail);
+
+	}
+
 	public function upallads($id){
 		$user = SirketUser::where('id','=',$id)->first();
 		$logo = $user->logo;

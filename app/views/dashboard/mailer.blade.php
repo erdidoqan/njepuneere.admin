@@ -28,21 +28,26 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-8">
 			<div class="well display-inline" style="width:820px;">
+			<div class="pull-right" style="margin-top: 40px;">
+        			<a href="/add-all-email" class="btn btn-success btn-xs">All User Emails</a>
+        		</div>
         		<h3 class="txt-color-green">Send Mail</h3>
         		
         		{{ Form::open(array('url' => array('mailer'),'class'=>'smart-form','id'=>'smart-form-register', 'enctype' => 'multipart/form-data')) }}
 	                      	
 		            <section>
-						<label class="input"> <i class="icon-append fa fa-question-circle"></i>
-							{{ Form::text('alici', '',array('class' => 'form-control', 'placeholder' => 'Emails')) }}
-							<b class="tooltip tooltip-right">
-								<i class="fa fa-warning txt-color-teal"></i> 
-								Note: Separate by commas(,).</b> 
-						</label>
-					</section>
 
+						<label class="textarea textarea-resizable"> <i class="icon-append fa fa-envelope"></i>
+							{{ Form::textarea('alici', '',array('class' => 'custom-scroll', 'placeholder' => 'Emails', 'rows'=>'3')) }}
+
+						</label>
+						<div class="note">
+						Separate by commas(,)
+						</div>
+					</section>
+					
 					<section>
 						<label class="input"> <i class="icon-append fa fa-question-circle"></i>
 							{{ Form::text('konu', '',array('class' => 'form-control', 'placeholder' => 'Subject')) }}
@@ -72,5 +77,25 @@
 		</div>
 	</div>
 </div>
+@if (Session::has('mail'))
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2" id="side">
+        	<div class="well display-inline" style="width:300px;right: 180px;">
+          
+						@foreach(Session::get('mail') as $key)
+							{{$key.";"}}
+						@endforeach
+					
+      		</div>
+        </div>
+    </div>
+</div>
+@endif  
+<script type="text/javascript">
+	
+
+
+</script>
 
 @stop
