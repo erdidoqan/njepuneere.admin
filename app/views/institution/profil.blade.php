@@ -54,11 +54,17 @@
           </div>
 
    				<div class="col-sm-5">
-   					Company Name:
+   					Authorized Email:
    				</div>
    				<div class="col-sm-7">
-   					-{{ucwords($sirket->com_name)}}
+   					-{{$sirket->email}}
    				</div>
+          <div class="col-sm-5">
+            Company Name:
+          </div>
+          <div class="col-sm-7">
+            -{{ucwords($sirket->com_name)}}
+          </div>
    				<div class="col-sm-5">
    					Company NIPT:
    				</div>
