@@ -56,7 +56,7 @@
 				<ul style="display: none;">
 					<li class="{{Request::path() == 'all_ins' ? 'active' : ''}}"><a href="/all_ins"> All Institution</a></li>
 					<li><a href="#"> Add Institution</a></li>
-					<li><a href="#"> Institution Details</a></li>
+					<li class="{{Request::path() == 'institution-message' ? 'active' : ''}}"><a href="/institution-message"> Send Message</a></li>
 				</ul>
 			</li>
 			<li>

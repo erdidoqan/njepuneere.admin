@@ -47,7 +47,10 @@
 			    		<td><span class="text-danger">{{$r->com_nipt}}</span></td>
 			    		<td><span class="text-warning">{{$r->com_sector}}</span></td>
 			    		<td><span class="label label-info">{{$r->country}} </span></td>
-			    		<td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">Company Profile</a></td>
+			    		<td>
+			    			<a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}" class="btn btn-xs btn-primary">Company Profile</a>
+			    			<a style="text-decoration: none;" href="all_ins/message/{{$r->id}}" class="btn btn-xs btn-primary"> <i class="fa fa-envelope"></i> </a>
+			    		</td>
 			    	</tbody>
 			    	@endforeach
 				</table>

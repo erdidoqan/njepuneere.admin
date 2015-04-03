@@ -25,6 +25,7 @@
       <a href="/all_ins" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-chevron-left"></i> Back to all institution</a>
         <h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Company Profile</h3>
       <div class="right">
+      <a href="/all_ins/message/{{$sirket->id}}" class="btn btn-info"> <i class="fa fa-envelope"></i> </a>
       <div class="btn-group">
               <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
                 <i class="fa fa-gear fa-lg"></i>  <span class="caret"></span>
@@ -157,6 +158,11 @@
               </tbody>
               @endforeach
           </table>
+        @else
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Warning!</strong> Institution has not yet any job.
+            </div>
         @endif
         {{$adsInfo->links()}}
 			</div>
@@ -179,12 +185,48 @@
                       <th>Applicant's Date</th>
                   </tr>
                  </thead>
-                 @foreach($app as $r)
+                 @foreach($app as $a)
                <tbody>   
-              <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$r->id}}">{{$r->com_name}}</a></td>
-              <td><a style="text-decoration:none;" href="#">{{$r->ads_name}}</a></td>
-              <td><span>{{ucwords($r->birey_adi)." ". ucwords($r->birey_soyadi)}}</span></td>
-              <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($r->created_at))->diffForHumans() }} </span></td>
+              <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$a->id}}">{{$a->com_name}}</a></td>
+              <td><a style="text-decoration:none;" href="#">{{$a->ads_name}}</a></td>
+              <td><span>{{ucwords($a->birey_adi)." ". ucwords($a->birey_soyadi)}}</span></td>
+              <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($a->created_at))->diffForHumans() }} </span></td>
+            </tbody>
+            @endforeach
+          </table>
+        @else
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <strong>Warning!</strong> Institution has not yet any application.
+            </div>
+        @endif
+        {{$app->links()}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="well display-inline" style="width:820px;">
+        <h3 class="text-danger"><strong>{{ucwords($sirket->com_name)}}</strong>, Messages</h3>
+
+        @if($message->count())
+          <table class="table table-hover">
+              <thead>
+                    <tr><th>Sender</th>
+                      <th>Subject</th>
+                      <th>Message</th>
+                      <th>Sending Date</th>
+                  </tr>
+                 </thead>
+                 @foreach($message as $m)
+               <tbody>   
+              <td><a style="text-decoration: none;" href="all_ins/profile_ins/{{$m->id}}">{{$m->com_name}}</a></td>
+              <td><span>{{$m->subject}}</span></td>
+              <td><span>{{strip_tags($m->message)}}</span></td>
+              <td><span class="label label-primary">{{ Carbon::createFromTimestamp(strtotime($m->created_at))->diffForHumans() }} </span></td>
             </tbody>
             @endforeach
           </table>

@@ -929,7 +929,7 @@ a:hover{color:#30495c !important}.wrapper .logo div{color:#41637e}.wrapper .logo
                           <tbody><tr>
                             <td class="padded" style="padding: 0;vertical-align: top;padding-left: 32px;padding-right: 32px">
                               
-            <p style="Margin-top: 0;color: #565656;line-height: 32px;Margin-bottom: 32px;">{{$mesaj}}</p>
+            <p>{{$mesaj}}</p>
           
                             </td>
                           </tr>

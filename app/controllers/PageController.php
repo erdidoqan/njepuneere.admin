@@ -100,15 +100,17 @@ class PageController extends BaseController {
 		$sirket = SirketUser::find($id);
 		$adsInfo = AdsInfo::where('user_id','=',$id)->orderBy('id','DESC')->paginate(10);
 		$app = AllApply::where('sirket_id','=',$id)->orderBy('id','DESC')->paginate(10);
+		$message = Message::where('sirket_id','=',$id)->orderBy('id','DESC')->paginate(10);
+		
 		$ads = Ads::where('user_id','=',$id)->first();
 		if(empty($ads)){
-			return View::make('institution.profil')->with(compact('sirket','adsInfo','app'));
+			return View::make('institution.profil')->with(compact('sirket','adsInfo','app','message'));
 		}else{
 			$ads_id = $ads->id;
 		}
-
+		
 		return View::make('institution.profil')
-		->with(compact('sirket', 'adsInfo','app', 'ads_id'));
+		->with(compact('sirket', 'adsInfo','app', 'ads_id', 'message'));
 	}
 	public function logo_up($id)
 	{
