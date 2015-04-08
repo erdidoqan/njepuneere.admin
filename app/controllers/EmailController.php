@@ -16,7 +16,6 @@ class EmailController extends BaseController {
 	public function SendPost() {
 		$mesaj = Input::get('mesaj');
 		$alici = Input::get('alici');
-		$konu = Input::get('konu');
 
 		$input = Input::all();
 		$rules = array ('mesaj' => 'required',
@@ -30,7 +29,7 @@ class EmailController extends BaseController {
 			$mails = new Emails;
 			$mails->alici = $alici;
 			$mails->mesaj = $mesaj;
-			$mails->subject = $konu;
+			$mails->subject = Input::get('konu');
 			$mails->save();
 
 			$to = explode(';', $alici);
@@ -39,7 +38,7 @@ class EmailController extends BaseController {
 				{
 					Mail::queue('emails.auth.reminder', array('mesaj' => $mesaj), function($mesaj) use ($person)
 					{
-					    $mesaj->to($person)->subject($konu);
+					    $mesaj->to($person)->subject(Input::get('konu'));
 					});
 				}
 
