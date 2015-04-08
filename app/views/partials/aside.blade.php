@@ -28,11 +28,17 @@
 					<span class="menu-item-parent">Languages</span>
 				</a>
 			</li>
-			<li class="{{Request::path() == 'mailer' ? 'active' : ''}}">
-				<a title="create-comp" href="/mailer">
+			<li>
+				<a title="Graphs" href="#">
 					<i class="fa fa-lg fa-fw fa-inbox"></i> 
-					<span class="menu-item-parent">Mailer</span>
+					<span class="menu-item-parent">Mail</span>
+						<b class="collapse-sign"><em class="fa fa-plus-square-o"></em></b>
 				</a>
+				<ul style="display: none;">
+					<li class="{{Request::path() == 'mail/send' ? 'active' : ''}}"><a href="/mail/send"> Send Mail</a></li>
+					<li class="{{Request::path() == 'mail/inbox' ? 'active' : ''}}"><a href="/mail/inbox"> Inbox</a></li>
+					
+				</ul>
 			</li>
 			<li>
 				<a title="Graphs" href="#">

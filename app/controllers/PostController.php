@@ -154,26 +154,5 @@ class PostController extends BaseController {
 		}
 	}
 
-	public function mailer(){
-		$mesaj = Input::get('mesaj');
-		$alici = Input::get('alici');
 
-		$to = explode(';', $alici);
-
-		foreach($to AS $person)
-		{
-			Mail::queue('emails.auth.reminder', array('mesaj' => $mesaj), function($mesaj) use ($person)
-			{
-			    $mesaj->to($person)->subject(Input::get('konu'));
-			});
-		}
-
-
-
-		return  Redirect::back()
-	                ->with('success', 
-	                		'Mails was successfully sent to all recipients');
-        
-		
-	}
 }

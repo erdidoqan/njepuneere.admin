@@ -142,8 +142,8 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6">
-			<div class="well well display-inline" style="width:550px;">
+		<div class="col-sm-12">
+			<div class="well well display-inline" style="width:1130px;">
 				<h3 class="txt-color-red">Lastest Applicant</h3>
 				<a href="all_app" class="btn btn-primary btn-xs right">All Applicant</a>
 				<hr>

@@ -22,6 +22,7 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/all_ins/create-jobinfo/{id}' , "PageController@create_jobinfo");
 	Route::get('/all_ins/preview/{sirket_id}' , "PageController@preview");
 	Route::get('all_ins/profile_ins/{id}' , "PageController@profil");
+	Route::get('all_ins/message/{id}', "MessageController@InsSend");
 
 	Route::get('logo-update/{id}', "PageController@logo_up");
 	Route::get('/all_app', "PageController@allApp");
@@ -29,9 +30,14 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/birey_user/{id}/{ads_id}', "PageController@BireyProfile");
 	Route::get('/logo-update/{id}/upallads', "PageController@upallads");
 
-	Route::get('/mailer', "PageController@mailer");
-	Route::post('/mailer', "PostController@mailer");
+	//mesaj rotalari
+	Route::post('/send-message/{id}', "MessageController@send");
+
+	Route::get('/mail/send', "EmailController@Send");
+	Route::post('/mailer', "EmailController@SendPost");
 	Route::get('/add-all-email', "PageController@allmail");
+
+	Route::get('/mail/inbox', "EmailController@MailInbox");
 	//Ads setting
 
 	Route::get('/jobs/job/delete/{id}', "AdsController@delete");

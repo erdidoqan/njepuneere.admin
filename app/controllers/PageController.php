@@ -148,16 +148,7 @@ class PageController extends BaseController {
 		->with(compact('user', 'Uexp', 'Uedu', 'Uintern', 'Uforeign', 'Ucompe','Ucert', 'Uref'));
 	}
 
-	public function mailer(){
-		return View::make('dashboard.mailer');
-	}
-
-	public function allmail(){
-		$allmail = BireyUser::lists('email');
-
-		return Redirect::back()->with('mail', $allmail);
-
-	}
+	
 
 	public function upallads($id){
 		$user = SirketUser::where('id','=',$id)->first();
