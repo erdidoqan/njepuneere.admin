@@ -39,8 +39,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Intervention\Image\ImageServiceProvider',
-		'Ipunkt\LaravelAnalytics\AnalyticsServiceProvider'
+		'Intervention\Image\ImageServiceProvider'
 	),
 
 	'manifest' => storage_path().'/meta',
@@ -85,8 +84,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Image' => 'Intervention\Image\Facades\Image',
-		'Carbon'		  => 'Carbon\Carbon',
-		'Analytics' => 'Ipunkt\LaravelAnalytics\AnalyticsFacade'
+		'Carbon'		  => 'Carbon\Carbon'
 	),
 
 );
