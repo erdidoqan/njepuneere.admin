@@ -10,7 +10,6 @@ class EmailController extends BaseController {
 		$allmail = BireyUser::lists('email');
 
 		return Redirect::back()->with('mail', $allmail);
-
 	}
 
 	public function SendPost() {
@@ -21,8 +20,6 @@ class EmailController extends BaseController {
 		$rules = array ('mesaj' => 'required',
 						'alici' => 'required');
 		$v = Validator::make($input,$rules);
-
-
 
 		if($v->passes())
 		{
